@@ -66,7 +66,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.3 }}
             className="text-5xl sm:text-7xl lg:text-8xl font-bold mb-6 font-serif text-gradient-huang drop-shadow-lg"
           >
-            武当后山符合堂
+            有符之人
           </motion.h1>
 
           <motion.p
