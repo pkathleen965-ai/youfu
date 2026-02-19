@@ -44,7 +44,6 @@ export default function Navigation() {
               <span className="text-lg sm:text-xl font-bold text-[var(--hei)] group-hover:text-[var(--qing)] transition-colors font-serif">
                 有符之人
               </span>
-              <span className="text-xs text-[var(--huang)] font-medium tracking-wider">武当后山符合堂</span>
             </div>
           </Link>
 
