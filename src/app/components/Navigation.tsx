@@ -40,7 +40,8 @@ export default function Navigation() {
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link href="/" className="flex items-center gap-3 group">
             <TaijiSymbol size={36} className="text-[var(--qing)]" />
-            <div>
+            <div className="flex flex-col">
+              <span className="text-xs text-[var(--zi)] font-medium tracking-widest">有符之人</span>
               <span className="text-lg sm:text-xl font-bold text-[var(--hei)] group-hover:text-[var(--qing)] transition-colors font-serif">
                 武当后山符合堂
               </span>
