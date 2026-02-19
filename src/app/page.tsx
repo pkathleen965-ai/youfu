@@ -38,29 +38,36 @@ export default function Home() {
     <div className="min-h-screen bg-[var(--bai)]">
       <Navigation />
 
-      {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[var(--hei)] via-[var(--hei)] to-[var(--qing)]">
-          <div className="absolute inset-0 opacity-10">
-            <BaguaSymbol size={800} className="absolute -top-40 -right-40 text-[var(--huang)]" />
-          </div>
+      {/* Hero Section - 紫气东来主题 */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-taoist-immortal">
+        <div className="absolute inset-0 opacity-20">
+          <BaguaSymbol size={600} className="absolute -top-20 -right-20 text-[var(--huang)]" />
+          <TaijiSymbol size={300} className="absolute -bottom-10 -left-10 text-[var(--huang)]" />
         </div>
+        
+        {/* 金色光晕效果 */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[var(--huang)]/20 rounded-full blur-[100px] animate-pulse-glow" />
 
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1 }}
             className="mb-8"
           >
-            <TaijiSymbol size={120} className="text-[var(--huang)] mx-auto" />
+            <div className="relative inline-block">
+              <TaijiSymbol size={140} className="text-[var(--huang)] drop-shadow-[0_0_30px_rgba(255,215,0,0.8)]" />
+              <div className="absolute inset-0 animate-pulse-glow">
+                <TaijiSymbol size={140} className="text-[var(--huang)]/30" />
+              </div>
+            </div>
           </motion.div>
 
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6 font-serif"
+            className="text-5xl sm:text-7xl lg:text-8xl font-bold mb-6 font-serif text-gradient-gold drop-shadow-lg"
           >
             武当后山符合堂
           </motion.h1>
@@ -69,43 +76,32 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="text-xl sm:text-2xl text-[var(--huang)] mb-4 font-serif"
+            className="text-2xl sm:text-3xl text-white mb-4 font-serif"
           >
-            传承千年符道 · 开启幸福人生
+            紫气东来 · 道法自然
           </motion.p>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="text-white/80 mb-12 max-w-2xl mx-auto"
+            className="text-white/80 mb-12 max-w-2xl mx-auto text-lg"
           >
-            师承武当法脉，提供三大核心服务
+            传承千年道统，弘扬符箓文化，助您趋吉避凶、转运改命
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto"
+            className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <a href="#fuzhou" className="group bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/20 transition-all border border-white/20 hover:border-[var(--huang)]">
-              <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">📜</div>
-              <h3 className="text-xl font-bold text-[var(--huang)] mb-2">祝由符箓</h3>
-              <p className="text-white/70 text-sm">定制灵符 · 祈福转运</p>
+            <a href="#services" className="btn-daoist-primary text-lg px-10 py-4">
+              探索服务
             </a>
-            
-            <a href="#fashi" className="group bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/20 transition-all border border-white/20 hover:border-[var(--qing)]">
-              <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">⚡</div>
-              <h3 className="text-xl font-bold text-[var(--qing)] mb-2">道家法事</h3>
-              <p className="text-white/70 text-sm">科仪祈福 · 消灾转运</p>
-            </a>
-            
-            <a href="#zhongshengji" className="group bg-[var(--chi)]/20 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-[var(--chi)]/30 transition-all border border-[var(--chi)]/50 hover:border-[var(--chi)]">
-              <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">🏔️</div>
-              <h3 className="text-xl font-bold text-[var(--chi)] mb-2">种生基</h3>
-              <p className="text-white/70 text-sm">改命转运 · 延年益寿</p>
-            </a>
+            <Link href="/contact" className="btn-daoist-immortal text-lg px-10 py-4">
+              预约咨询
+            </Link>
           </motion.div>
         </div>
 
@@ -119,154 +115,170 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* 符道文化 */}
-      <section id="culture" className="py-20 sm:py-28 bg-white">
+      {/* 三大核心服务 - 使用五行色 */}
+      <section id="services" className="py-24 bg-gradient-to-b from-[var(--hei)] to-[var(--qing-dark)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn>
+            <div className="text-center mb-16">
+              <h2 className="text-4xl sm:text-5xl font-bold mb-4 font-serif text-gradient-gold">
+                三大核心服务
+              </h2>
+              <p className="text-white/70 text-lg">承袭道统，运用五行之理，助您转运改命</p>
+            </div>
+          </FadeIn>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* 祝由符箓 - 木/青色 */}
+            <FadeIn delay={0.1}>
+              <motion.div 
+                whileHover={{ y: -10 }}
+                className="bg-gradient-to-br from-[var(--qing)] to-[var(--qing-dark)] rounded-2xl p-8 text-center border border-[var(--qing-light)]/30 shadow-[0_0_30px_rgba(0,168,107,0.3)]"
+              >
+                <div className="text-6xl mb-6">📜</div>
+                <h3 className="text-2xl font-bold text-white mb-3">祝由符箓</h3>
+                <p className="text-white/80 mb-4">东方甲乙木，主生发之气</p>
+                <p className="text-white/60 text-sm">定制灵符，祈福转运，调理身心</p>
+                <Link href="/fuzhou" className="mt-6 inline-block text-[var(--huang)] hover:underline">
+                  了解详情 →
+                </Link>
+              </motion.div>
+            </FadeIn>
+
+            {/* 道家法事 - 火/红色 */}
+            <FadeIn delay={0.2}>
+              <motion.div 
+                whileHover={{ y: -10 }}
+                className="bg-gradient-to-br from-[var(--chi)] to-[var(--chi-dark)] rounded-2xl p-8 text-center border border-[var(--chi-light)]/30 shadow-[0_0_30px_rgba(220,20,60,0.3)]"
+              >
+                <div className="text-6xl mb-6">⚡</div>
+                <h3 className="text-2xl font-bold text-white mb-3">道家法事</h3>
+                <p className="text-white/80 mb-4">南方丙丁火，主阳火驱邪</p>
+                <p className="text-white/60 text-sm">科仪祈福，消灾转运，趋吉避凶</p>
+                <Link href="/fashi" className="mt-6 inline-block text-[var(--huang)] hover:underline">
+                  了解详情 →
+                </Link>
+              </motion.div>
+            </FadeIn>
+
+            {/* 种生基 - 土/黄色 */}
+            <FadeIn delay={0.3}>
+              <motion.div 
+                whileHover={{ y: -10 }}
+                className="bg-gradient-to-br from-[var(--huang)] to-[var(--huang-dark)] rounded-2xl p-8 text-center border border-[var(--huang-light)]/30 shadow-[0_0_30px_rgba(255,215,0,0.3)]"
+              >
+                <div className="text-6xl mb-6">🏔️</div>
+                <h3 className="text-2xl font-bold text-[var(--hei)] mb-3">种生基</h3>
+                <p className="text-[var(--hei)]/80 mb-4">中央戊己土，主厚德载物</p>
+                <p className="text-[var(--hei)]/60 text-sm">改命转运，延年益寿，福寿绵长</p>
+                <Link href="/zhongshengji" className="mt-6 inline-block text-[var(--chi)] hover:underline">
+                  了解详情 →
+                </Link>
+              </motion.div>
+            </FadeIn>
+          </div>
+        </div>
+      </section>
+
+      {/* 符道文化 - 白色/金色主题 */}
+      <section id="culture" className="py-24 bg-gradient-to-b from-[var(--bai)] via-[#F0F0F5] to-[var(--bai)]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-5xl font-bold text-[var(--hei)] mb-4 font-serif">符道文化</h2>
+              <h2 className="text-4xl sm:text-5xl font-bold text-[var(--hei)] mb-4 font-serif">
+                <span className="text-gradient-gold">符道文化</span>
+              </h2>
               <Divider className="my-6" />
-              <p className="text-lg text-[var(--hei)]/70 max-w-2xl mx-auto">
-                符，源于道家祝由术，是中华传统文化的瑰宝，蕴含着深邃的哲学思想和实践智慧
-              </p>
             </div>
           </FadeIn>
 
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <FadeIn direction="left">
               <div className="space-y-6">
-                <p className="text-[var(--hei)]/80 leading-relaxed">
+                <p className="text-[var(--hei)]/80 leading-relaxed text-lg">
                   《黄帝内经》云：「古之治病，唯其移精变气，可祝由而已。」祝由术的本质，是通过意念的聚焦，疏通全身淤堵，实现自我疗愈。
                 </p>
-                <p className="text-[var(--hei)]/80 leading-relaxed">
+                <p className="text-[var(--hei)]/80 leading-relaxed text-lg">
                   符与福，音近而义通。符是福的种子，福是符的显化。每个人都可以通过修炼符力，显化属于自己的幸福。
                 </p>
-                <Link href="/culture" className="inline-block text-[var(--qing)] font-medium hover:underline">
-                  了解更多 →
+                <Link href="/culture" className="inline-flex items-center gap-2 text-[var(--zi)] font-bold hover:gap-4 transition-all">
+                  探索符道文化 <span>→</span>
                 </Link>
               </div>
             </FadeIn>
 
             <FadeIn direction="right">
-              <div className="flex justify-center">
-                <WuXingSymbol className="w-64 h-64" />
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-r from-[var(--huang)]/20 to-[var(--zi)]/20 rounded-full blur-3xl" />
+                <WuXingSymbol className="w-full max-w-md mx-auto relative z-10" />
               </div>
             </FadeIn>
           </div>
         </div>
       </section>
 
-      {/* 种生基 */}
-      <section id="zhongshengji" className="py-20 sm:py-28 bg-gradient-to-b from-[var(--hei)] to-[var(--hei)]/95 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <BaguaSymbol size={600} className="absolute -top-20 -right-20 text-[var(--huang)]" />
-          <TaijiSymbol size={300} className="absolute -bottom-10 -left-10 text-[var(--huang)]" />
-        </div>
-
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <FadeIn>
-            <div className="text-center mb-16">
-              <div className="text-5xl mb-4">🏔️</div>
-              <h2 className="text-3xl sm:text-5xl font-bold mb-4 font-serif">种生基 · 改命转运秘法</h2>
-              <Divider className="my-6" />
-              <p className="text-xl text-[var(--huang)] max-w-3xl mx-auto">
-                种生基，乃「生命的根基」，是道家千年秘传的改命转运之法
-              </p>
-            </div>
-          </FadeIn>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {[
-              { icon: "💰", title: "招财进宝", desc: "更多商业机会，财运亨通" },
-              { icon: "🏥", title: "延年益寿", desc: "增强生命力，精神充沛" },
-              { icon: "💕", title: "姻缘美满", desc: "改善爱情运，家庭幸福" },
-              { icon: "📈", title: "催官进禄", desc: "事业亨通，贵人扶持" },
-            ].map((item, index) => (
-              <FadeIn key={index} delay={index * 0.1}>
-                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center hover:bg-white/20 transition-all">
-                  <div className="text-4xl mb-3">{item.icon}</div>
-                  <h3 className="text-lg font-bold text-[var(--huang)] mb-2">{item.title}</h3>
-                  <p className="text-white/70 text-sm">{item.desc}</p>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-
-          <FadeIn>
-            <div className="text-center">
-              <Link href="/zhongshengji" className="inline-block px-10 py-4 bg-[var(--huang)] text-[var(--hei)] rounded-full font-bold text-lg hover:bg-[var(--huang-light)] transition-all">
-                了解种生基详情
-              </Link>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* 祝由符箓 */}
-      <section id="fuzhou" className="py-20 sm:py-28 bg-[var(--bai)]">
+      {/* 祝由符箓服务 - 青色主题 */}
+      <section id="fuzhou" className="py-24 bg-gradient-to-b from-[var(--qing-dark)] to-[var(--qing)]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-5xl font-bold text-[var(--hei)] mb-4 font-serif">祝由符箓</h2>
-              <Divider className="my-6" />
-              <p className="text-lg text-[var(--hei)]/70">依循古法绘制，为您定制专属灵符</p>
+              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-serif">祝由符箓</h2>
+              <p className="text-white/80 text-lg">东方甲乙木，主生发之气，生生不息</p>
             </div>
           </FadeIn>
 
           <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
             {fuzhouServices.map((item, index) => (
               <StaggerItem key={index}>
-                <motion.div
-                  whileHover={{ y: -5 }}
-                  className="bg-white rounded-xl p-6 shadow-taoist hover-lift"
+                <motion.div 
+                  whileHover={{ y: -5, scale: 1.02 }}
+                  className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 hover:bg-white/20 transition-all"
                 >
                   <div className="text-4xl mb-4">{item.icon}</div>
-                  <h3 className="text-xl font-bold text-[var(--hei)] mb-2">{item.name}</h3>
-                  <p className="text-[var(--hei)]/70">{item.desc}</p>
+                  <h3 className="text-xl font-bold text-white mb-2">{item.name}</h3>
+                  <p className="text-white/70">{item.desc}</p>
                 </motion.div>
               </StaggerItem>
             ))}
           </StaggerContainer>
 
           <FadeIn>
-            <div className="text-center mt-10">
-              <Link href="/fuzhou" className="inline-block text-[var(--qing)] font-medium hover:underline">
-                查看全部符箓服务 →
+            <div className="text-center mt-12">
+              <Link href="/fuzhou" className="btn-daoist-primary inline-block">
+                查看全部符箓
               </Link>
             </div>
           </FadeIn>
         </div>
       </section>
 
-      {/* 法事服务 */}
-      <section id="fashi" className="py-20 sm:py-28 bg-white">
+      {/* 道家法事服务 - 红色主题 */}
+      <section id="fashi" className="py-24 bg-taoist-fire">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-5xl font-bold text-[var(--hei)] mb-4 font-serif">法事服务</h2>
-              <Divider className="my-6" />
-              <p className="text-lg text-[var(--hei)]/70">正统道家法事，祈福消灾转运</p>
+              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-serif">道家法事</h2>
+              <p className="text-white/80 text-lg">南方丙丁火，阳火驱邪，光明威严</p>
             </div>
           </FadeIn>
 
           <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {fashiServices.map((item, index) => (
+            {fashiServices.slice(0, 8).map((item, index) => (
               <StaggerItem key={index}>
-                <motion.div
-                  whileHover={{ y: -5, scale: 1.02 }}
-                  className="bg-gradient-to-br from-[var(--bai)] to-white rounded-xl p-6 shadow-taoist hover-lift text-center"
+                <motion.div 
+                  whileHover={{ y: -5 }}
+                  className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center border border-white/20 hover:bg-white/20 transition-all"
                 >
                   <div className="text-4xl mb-3">{item.icon}</div>
-                  <h3 className="text-lg font-bold text-[var(--hei)] mb-2">{item.name}</h3>
-                  <p className="text-[var(--hei)]/60 text-sm">{item.desc}</p>
+                  <h3 className="text-lg font-bold text-white mb-2">{item.name}</h3>
+                  <p className="text-white/60 text-sm">{item.desc}</p>
                 </motion.div>
               </StaggerItem>
             ))}
           </StaggerContainer>
 
           <FadeIn>
-            <div className="text-center mt-10">
-              <Link href="/fashi" className="inline-block px-8 py-3 border-2 border-[var(--qing)] text-[var(--qing)] rounded-full font-medium hover:bg-[var(--qing)] hover:text-white transition-all">
+            <div className="text-center mt-12">
+              <Link href="/fashi" className="btn-daoist-primary inline-block">
                 了解更多法事
               </Link>
             </div>
@@ -274,63 +286,80 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 真实案例 */}
-      <section id="cases" className="py-20 sm:py-28 bg-[var(--bai)]">
+      {/* 种生基 - 黄色/金色主题 */}
+      <section id="zhongshengji" className="py-24 bg-gradient-to-b from-[var(--huang)] via-[#FFA500] to-[var(--chi)]">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <FadeIn>
+            <div className="text-6xl mb-6">🏔️</div>
+            <h2 className="text-4xl sm:text-6xl font-bold text-[var(--hei)] mb-4 font-serif">种生基</h2>
+            <p className="text-2xl text-[var(--hei)]/80 mb-6">中央戊己土，厚德载物，改命转运</p>
+            <p className="text-[var(--hei)]/70 mb-8 max-w-2xl mx-auto">
+              种生基乃道家千年秘传之法，通过将生人的贴身物品埋入风水龙穴，借助天地灵气滋养生命能量，达到趋吉避凶、延年益寿之效。
+            </p>
+            <Link href="/zhongshengji" className="btn-daoist-fire inline-block text-lg px-10 py-4">
+              了解种生基详情
+            </Link>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* 真实案例 - 紫色主题 */}
+      <section id="cases" className="py-24 bg-gradient-to-b from-[var(--zi-dark)] via-[var(--zi)] to-[var(--zi-dark)]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-5xl font-bold text-[var(--hei)] mb-4 font-serif">真实案例</h2>
-              <Divider className="my-6" />
-              <p className="text-lg text-[var(--hei)]/70">数以千计的成功案例，见证符箓效果</p>
+              <h2 className="text-4xl sm:text-5xl font-bold text-white mb-4 font-serif">真实案例</h2>
+              <p className="text-white/80 text-lg">紫气东来，见证符箓神奇功效</p>
             </div>
           </FadeIn>
 
           <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {cases.map((item, index) => (
               <StaggerItem key={index}>
-                <motion.div
+                <motion.div 
                   whileHover={{ y: -5 }}
-                  className="bg-white rounded-xl p-6 shadow-taoist"
+                  className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-[var(--huang)]/30"
                 >
                   <div className="flex items-center gap-3 mb-4">
-                    <div className="w-10 h-10 bg-[var(--qing)] text-white rounded-full flex items-center justify-center font-bold">
+                    <div className="w-10 h-10 bg-[var(--huang)] text-[var(--hei)] rounded-full flex items-center justify-center font-bold">
                       {item.name[0]}
                     </div>
                     <div>
-                      <h3 className="font-bold text-[var(--hei)]">{item.name}</h3>
-                      <span className="text-xs bg-[var(--huang)]/20 text-[var(--huang)] px-2 py-0.5 rounded">{item.result}</span>
+                      <h3 className="font-bold text-white">{item.name}</h3>
+                      <span className="text-xs text-[var(--huang)]">{item.result}</span>
                     </div>
                   </div>
-                  <p className="text-[var(--hei)]/70 text-sm mb-3">「{item.content}」</p>
-                  <p className="text-xs text-[var(--hei)]/50">服务：{item.service}</p>
+                  <p className="text-white/80 text-sm mb-3">「{item.content}」</p>
+                  <p className="text-xs text-white/50">服务：{item.service}</p>
                 </motion.div>
               </StaggerItem>
             ))}
           </StaggerContainer>
 
           <FadeIn>
-            <div className="text-center mt-10">
-              <Link href="/cases" className="inline-block text-[var(--qing)] font-medium hover:underline">
-                查看更多案例 →
+            <div className="text-center mt-12">
+              <Link href="/cases" className="btn-daoist-primary inline-block">
+                查看更多案例
               </Link>
             </div>
           </FadeIn>
         </div>
       </section>
 
-      {/* 联系我们 */}
-      <section id="contact" className="py-20 sm:py-28 bg-gradient-to-b from-[var(--qing)] to-[var(--qing-light)] text-white">
+      {/* 联系我们 - 金色主题 */}
+      <section id="contact" className="py-24 bg-gradient-to-b from-[var(--hei)] via-[#1a1a2e] to-[var(--hei)]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
-            <h2 className="text-3xl sm:text-5xl font-bold mb-6 font-serif">联系我们</h2>
-            <p className="text-xl text-white/80 mb-8">
-              添加微信，获取一对一专业咨询
-            </p>
+            <div className="relative inline-block mb-8">
+              <TaijiSymbol size={80} className="text-[var(--huang)] drop-shadow-[0_0_20px_rgba(255,215,0,0.8)]" />
+            </div>
+            <h2 className="text-4xl sm:text-5xl font-bold text-gradient-gold mb-6 font-serif">联系我们</h2>
+            <p className="text-white/80 mb-8 text-lg">传承道统 · 开启幸福人生</p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact" className="px-10 py-4 bg-white text-[var(--qing)] rounded-full font-bold text-lg hover:bg-[var(--bai)] transition-all">
+              <Link href="/contact" className="btn-daoist-primary text-lg px-10 py-4">
                 在线咨询
               </Link>
-              <Link href="/zhongshengji" className="px-10 py-4 border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white/10 transition-all">
+              <Link href="/zhongshengji" className="btn-daoist-immortal text-lg px-10 py-4">
                 预约种生基
               </Link>
             </div>
@@ -339,30 +368,30 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[var(--hei)] text-white py-12">
+      <footer className="bg-[var(--hei)] text-white py-12 border-t border-[var(--huang)]/20">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-3 mb-4">
                 <TaijiSymbol size={32} className="text-[var(--huang)]" />
-                <span className="text-lg font-bold font-serif">武当后山符合堂</span>
+                <span className="text-lg font-bold font-serif text-gradient-gold">武当后山符合堂</span>
               </div>
               <p className="text-white/60 text-sm">传承道家符箓文化<br />弘扬祝由智慧</p>
             </div>
             <div>
               <h4 className="font-bold mb-4 text-[var(--huang)]">服务项目</h4>
               <ul className="space-y-2 text-sm text-white/60">
-                <li><Link href="/zhongshengji" className="hover:text-white">种生基</Link></li>
-                <li><Link href="/fuzhou" className="hover:text-white">祝由符箓</Link></li>
-                <li><Link href="/fashi" className="hover:text-white">法事服务</Link></li>
+                <li><Link href="/fuzhou" className="hover:text-[var(--huang)]">祝由符箓</Link></li>
+                <li><Link href="/fashi" className="hover:text-[var(--huang)]">道家法事</Link></li>
+                <li><Link href="/zhongshengji" className="hover:text-[var(--huang)]">种生基</Link></li>
               </ul>
             </div>
             <div>
               <h4 className="font-bold mb-4 text-[var(--huang)]">了解更多</h4>
               <ul className="space-y-2 text-sm text-white/60">
-                <li><Link href="/culture" className="hover:text-white">符道文化</Link></li>
-                <li><Link href="/cases" className="hover:text-white">真实案例</Link></li>
-                <li><Link href="/contact" className="hover:text-white">联系我们</Link></li>
+                <li><Link href="/culture" className="hover:text-[var(--huang)]">符道文化</Link></li>
+                <li><Link href="/cases" className="hover:text-[var(--huang)]">真实案例</Link></li>
+                <li><Link href="/contact" className="hover:text-[var(--huang)]">联系我们</Link></li>
               </ul>
             </div>
             <div>

@@ -3,15 +3,25 @@
 @tailwind utilities;
 
 :root {
-  --qing: #3A8B6B;
-  --chi: #B8423A;
-  --huang: #C9A227;
-  --bai: #F5F5F0;
-  --hei: #1A1A1A;
+  /* 道家五行五色 - 鲜艳版 */
+  --qing: #00A86B;
+  --qing-light: #00D68F;
+  --qing-dark: #007A4D;
   
-  --qing-light: #5AAF8A;
-  --chi-light: #D4635A;
-  --huang-light: #E0C050;
+  --chi: #DC143C;
+  --chi-light: #FF1744;
+  --chi-dark: #B71C1C;
+  
+  --huang: #FFD700;
+  --huang-light: #FFE44D;
+  --huang-dark: #FFA000;
+  
+  --zi: #8B00FF;
+  --zi-light: #B147FF;
+  --zi-dark: #5C00B3;
+  
+  --bai: #F8F8FF;
+  --hei: #0a0a0a;
 }
 
 * {
@@ -31,6 +41,116 @@ body {
   line-height: 1.8;
 }
 
+/* 道家渐变背景 */
+.bg-taoist-primary {
+  background: linear-gradient(135deg, var(--qing) 0%, var(--qing-dark) 50%, var(--hei) 100%);
+}
+
+.bg-taoist-fire {
+  background: linear-gradient(135deg, var(--chi) 0%, var(--chi-dark) 50%, #8B0000 100%);
+}
+
+.bg-taoist-earth {
+  background: linear-gradient(135deg, var(--huang) 0%, #FF8C00 50%, var(--chi) 100%);
+}
+
+.bg-taoist-immortal {
+  background: linear-gradient(135deg, var(--zi) 0%, var(--qing) 50%, var(--zi-dark) 100%);
+}
+
+.bg-taoist-metal {
+  background: linear-gradient(135deg, #C0C0C0 0%, var(--bai) 50%, #FFD700 100%);
+}
+
+.bg-taoist-water {
+  background: linear-gradient(135deg, #000428 0%, #004e92 50%, var(--qing) 100%);
+}
+
+/* 文字渐变 */
+.text-gradient-gold {
+  background: linear-gradient(135deg, var(--huang) 0%, #FFA000 50%, var(--huang-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, var(--zi) 0%, var(--zi-light) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-fire {
+  background: linear-gradient(135deg, var(--chi) 0%, #FF6B00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* 按钮样式 */
+.btn-daoist-primary {
+  background: linear-gradient(135deg, var(--huang) 0%, #FF8C00 100%);
+  color: var(--hei);
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+.btn-daoist-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+}
+
+.btn-daoist-fire {
+  background: linear-gradient(135deg, var(--chi) 0%, #FF1744 100%);
+  color: white;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
+}
+
+.btn-daoist-fire:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(220, 20, 60, 0.6);
+}
+
+.btn-daoist-immortal {
+  background: linear-gradient(135deg, var(--zi) 0%, var(--zi-light) 100%);
+  color: white;
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(139, 0, 255, 0.4);
+}
+
+.btn-daoist-immortal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 0, 255, 0.6);
+}
+
+/* 卡片样式 */
+.card-daoist {
+  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,215,0,0.3);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.card-daoist:hover {
+  border-color: rgba(255,215,0,0.6);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(255,215,0,0.2);
+}
+
+/* 动画 */
 @keyframes float {
   0%, 100% { transform: translateY(0) rotate(0deg); }
   50% { transform: translateY(-20px) rotate(5deg); }
@@ -38,7 +158,7 @@ body {
 
 @keyframes pulse-glow {
   0%, 100% { opacity: 0.5; transform: scale(1); }
-  50% { opacity: 0.8; transform: scale(1.05); }
+  50% { opacity: 1; transform: scale(1.05); }
 }
 
 @keyframes fadeInUp {
@@ -62,4 +182,17 @@ body {
 
 .animate-fadeInUp {
   animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* 光效 */
+.glow-gold {
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 40px rgba(255, 215, 0, 0.3);
+}
+
+.glow-red {
+  box-shadow: 0 0 20px rgba(220, 20, 60, 0.5), 0 0 40px rgba(220, 20, 60, 0.3);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(139, 0, 255, 0.5), 0 0 40px rgba(139, 0, 255, 0.3);
 }
