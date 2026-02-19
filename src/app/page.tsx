@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Navigation from "./components/Navigation";
 import { FadeIn, StaggerContainer, StaggerItem } from "./components/Animations";
-import { TaijiSymbol, BaguaSymbol, Divider, WuXingSymbol } from "./components/TaoistSymbols";
+import { TaijiSymbol, BaguaSymbol, WuXingSymbol } from "./components/TaoistSymbols";
 
 const fashiServices = [
   { id: 1, name: "安太岁", desc: "化解流年不利，祈福平安顺遂", icon: "🐉" },
