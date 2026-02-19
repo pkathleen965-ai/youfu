@@ -39,9 +39,9 @@ export default function Navigation() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link href="/" className="flex items-center gap-3 group">
-            <TaijiSymbol size={36} className="text-[var(--qing)]" />
+            <TaijiSymbol size={36} className="text-[var(--huang-light)]" />
             <div className="flex flex-col">
-              <span className="text-lg sm:text-xl font-bold text-[var(--hei)] group-hover:text-[var(--qing)] transition-colors font-serif">
+              <span className="text-lg sm:text-xl font-bold text-white group-hover:text-[var(--huang-light)] transition-colors font-serif drop-shadow-lg">
                 有符之人
               </span>
             </div>
@@ -52,7 +52,7 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-[var(--hei)] hover:text-[var(--qing)] transition-colors font-medium text-sm tracking-wide"
+                className="text-white/90 hover:text-[var(--huang-light)] transition-colors font-medium text-sm tracking-wide drop-shadow"
               >
                 {item.label}
               </Link>
@@ -61,7 +61,7 @@ export default function Navigation() {
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-[var(--hei)]"
+            className="lg:hidden p-2 text-white"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isMobileMenuOpen ? (
