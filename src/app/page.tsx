@@ -64,7 +64,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-5xl sm:text-7xl lg:text-8xl font-bold mb-6 font-serif text-gradient-huang drop-shadow-lg"
+            className="text-5xl sm:text-7xl lg:text-8xl font-bold mb-2 font-serif text-gradient-zi drop-shadow-lg"
           >
             有符之人
           </motion.h1>
@@ -72,7 +72,16 @@ export default function Home() {
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-2xl sm:text-3xl text-white mb-4 font-serif text-gradient-huang"
+          >
+            武当后山符合堂
+          </motion.p>
+
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.6 }}
             className="text-2xl sm:text-3xl text-white mb-4 font-serif"
           >
             道法自然 · 祝由通神
@@ -90,7 +99,7 @@ export default function Home() {
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
             <a href="#services" className="btn-huang text-lg px-10 py-4">

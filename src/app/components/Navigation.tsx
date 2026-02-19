@@ -39,11 +39,12 @@ export default function Navigation() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link href="/" className="flex items-center gap-3 group">
-            <TaijiSymbol size={36} className="text-[var(--huang-light)]" />
+            <TaijiSymbol size={36} className="text-[var(--zi-light)]" />
             <div className="flex flex-col">
-              <span className="text-lg sm:text-xl font-bold text-white group-hover:text-[var(--huang-light)] transition-colors font-serif drop-shadow-lg">
+              <span className="text-lg sm:text-xl font-bold text-white group-hover:text-[var(--zi-light)] transition-colors font-serif drop-shadow-lg">
                 有符之人
               </span>
+              <span className="text-xs text-[var(--huang-light)] font-medium tracking-wider drop-shadow">武当后山符合堂</span>
             </div>
           </Link>
 
