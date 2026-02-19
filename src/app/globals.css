@@ -3,27 +3,33 @@
 @tailwind utilities;
 
 :root {
-  /* 道家五行五色 - 鲜艳版 */
-  --qing: #00A86B;
-  --qing-light: #00D68F;
-  --qing-dark: #007A4D;
+  /* 设计师提供的道家五色 - 鲜艳版 */
+  --dao-qing: #1E8D8D;
+  --dao-qing-light: #40E0D0;
+  --dao-qing-dark: #0A2F2F;
   
-  --chi: #DC143C;
-  --chi-light: #FF1744;
-  --chi-dark: #B71C1C;
+  --dao-zi: #6A0DAD;
+  --dao-zi-light: #B266FF;
+  --dao-zi-dark: #4A0080;
   
-  --huang: #FFD700;
-  --huang-light: #FFE44D;
-  --huang-dark: #FFA000;
+  --dao-huang: #C89F68;
+  --dao-huang-light: #F4C542;
+  --dao-huang-dark: #B8863F;
   
-  --zi: #8B00FF;
-  --zi-light: #B147FF;
-  --zi-dark: #5C00B3;
+  --dao-chi: #D43A2F;
+  --dao-chi-light: #FF7F50;
+  --dao-chi-dark: #B22222;
   
-  --bai: #F8F8FF;
-  --hei: #0a0a0a;
+  --dao-mo: #1A1A1A;
+  --dao-xuan: #F5F5F5;
+  --dao-bai: #FFFFFF;
 }
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 基础样式 */
 * {
   margin: 0;
   padding: 0;
@@ -36,118 +42,130 @@ html {
 
 body {
   font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
-  background-color: var(--bai);
-  color: var(--hei);
+  background-color: var(--dao-xuan);
+  color: var(--dao-mo);
   line-height: 1.8;
 }
 
-/* 道家渐变背景 */
-.bg-taoist-primary {
-  background: linear-gradient(135deg, var(--qing) 0%, var(--qing-dark) 50%, var(--hei) 100%);
+/* 字体类 */
+.font-serif {
+  font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
 }
 
-.bg-taoist-fire {
-  background: linear-gradient(135deg, var(--chi) 0%, var(--chi-dark) 50%, #8B0000 100%);
+/* 核心渐变背景 */
+.bg-dao-qing {
+  background: linear-gradient(135deg, var(--dao-qing), var(--dao-qing-light));
 }
 
-.bg-taoist-earth {
-  background: linear-gradient(135deg, var(--huang) 0%, #FF8C00 50%, var(--chi) 100%);
+.bg-dao-zi {
+  background: linear-gradient(145deg, var(--dao-zi), var(--dao-zi-light));
 }
 
-.bg-taoist-immortal {
-  background: linear-gradient(135deg, var(--zi) 0%, var(--qing) 50%, var(--zi-dark) 100%);
+.bg-dao-huang {
+  background: linear-gradient(120deg, var(--dao-huang-dark), var(--dao-huang-light));
 }
 
-.bg-taoist-metal {
-  background: linear-gradient(135deg, #C0C0C0 0%, var(--bai) 50%, #FFD700 100%);
+.bg-dao-chi {
+  background: linear-gradient(45deg, var(--dao-chi), var(--dao-chi-light));
 }
 
-.bg-taoist-water {
-  background: linear-gradient(135deg, #000428 0%, #004e92 50%, var(--qing) 100%);
+.bg-dao-dark {
+  background: linear-gradient(180deg, var(--dao-mo), var(--dao-qing-dark));
 }
 
 /* 文字渐变 */
-.text-gradient-gold {
-  background: linear-gradient(135deg, var(--huang) 0%, #FFA000 50%, var(--huang-light) 100%);
+.text-gradient-zi {
+  background: linear-gradient(145deg, var(--dao-zi), var(--dao-zi-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.text-gradient-purple {
-  background: linear-gradient(135deg, var(--zi) 0%, var(--zi-light) 100%);
+.text-gradient-huang {
+  background: linear-gradient(120deg, var(--dao-huang-dark), var(--dao-huang-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.text-gradient-fire {
-  background: linear-gradient(135deg, var(--chi) 0%, #FF6B00 100%);
+.text-gradient-chi {
+  background: linear-gradient(45deg, var(--dao-chi), var(--dao-chi-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 /* 按钮样式 */
-.btn-daoist-primary {
-  background: linear-gradient(135deg, var(--huang) 0%, #FF8C00 100%);
-  color: var(--hei);
-  font-weight: bold;
-  padding: 1rem 2rem;
-  border-radius: 9999px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
-}
-
-.btn-daoist-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
-}
-
-.btn-daoist-fire {
-  background: linear-gradient(135deg, var(--chi) 0%, #FF1744 100%);
+.btn-primary {
+  background: linear-gradient(145deg, var(--dao-zi), var(--dao-zi-light));
   color: white;
   font-weight: bold;
   padding: 1rem 2rem;
   border-radius: 9999px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(220, 20, 60, 0.4);
+  box-shadow: 0 4px 15px rgba(106, 13, 173, 0.4);
 }
 
-.btn-daoist-fire:hover {
+.btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(220, 20, 60, 0.6);
+  box-shadow: 0 6px 25px rgba(106, 13, 173, 0.6);
 }
 
-.btn-daoist-immortal {
-  background: linear-gradient(135deg, var(--zi) 0%, var(--zi-light) 100%);
+.btn-huang {
+  background: linear-gradient(120deg, var(--dao-huang-dark), var(--dao-huang-light));
+  color: var(--dao-mo);
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(200, 159, 104, 0.4);
+}
+
+.btn-huang:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(200, 159, 104, 0.6);
+}
+
+.btn-chi {
+  background: linear-gradient(45deg, var(--dao-chi), var(--dao-chi-light));
   color: white;
   font-weight: bold;
   padding: 1rem 2rem;
   border-radius: 9999px;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(139, 0, 255, 0.4);
+  box-shadow: 0 4px 15px rgba(212, 58, 47, 0.4);
 }
 
-.btn-daoist-immortal:hover {
+.btn-chi:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(139, 0, 255, 0.6);
+  box-shadow: 0 6px 25px rgba(212, 58, 47, 0.6);
 }
 
-/* 卡片样式 */
-.card-daoist {
-  background: linear-gradient(135deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
+/* 卡片样式 - 玻璃态 */
+.card-glass {
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,215,0,0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 1rem;
   padding: 1.5rem;
   transition: all 0.3s ease;
 }
 
-.card-daoist:hover {
-  border-color: rgba(255,215,0,0.6);
+.card-glass:hover {
+  background: rgba(255, 255, 255, 0.15);
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(255,215,0,0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* 卡片边框 - 玄黄土 */
+.card-huang {
+  border: 1px solid rgba(200, 159, 104, 0.5);
+}
+
+/* 云纹背景 */
+.bg-cloud {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cpath d='M50 10 Q30 10 30 30 Q30 50 50 50 Q70 50 70 30 Q70 10 50 10' fill='none' stroke='rgba(255,255,255,0.03)' stroke-width='1'/%3E%3C/svg%3E");
+  background-size: 200px 200px;
 }
 
 /* 动画 */
@@ -185,14 +203,21 @@ body {
 }
 
 /* 光效 */
-.glow-gold {
-  box-shadow: 0 0 20px rgba(255, 215, 0, 0.5), 0 0 40px rgba(255, 215, 0, 0.3);
+.glow-zi {
+  box-shadow: 0 0 30px rgba(106, 13, 173, 0.5), 0 0 60px rgba(106, 13, 173, 0.3);
 }
 
-.glow-red {
-  box-shadow: 0 0 20px rgba(220, 20, 60, 0.5), 0 0 40px rgba(220, 20, 60, 0.3);
+.glow-huang {
+  box-shadow: 0 0 30px rgba(200, 159, 104, 0.5), 0 0 60px rgba(200, 159, 104, 0.3);
 }
 
-.glow-purple {
-  box-shadow: 0 0 20px rgba(139, 0, 255, 0.5), 0 0 40px rgba(139, 0, 255, 0.3);
+.glow-chi {
+  box-shadow: 0 0 30px rgba(212, 58, 47, 0.5), 0 0 60px rgba(212, 58, 47, 0.3);
+}
+
+/* 分割线 */
+.divider-dao {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--dao-huang), transparent);
+  margin: 2rem 0;
 }
