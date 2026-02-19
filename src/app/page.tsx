@@ -78,25 +78,33 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="text-white/80 mb-10 max-w-2xl mx-auto"
+            className="text-white/80 mb-12 max-w-2xl mx-auto"
           >
-            师承武当法脉，精通种生基、祝由符箓、道家法事
+            师承武当法脉，提供三大核心服务
           </motion.p>
 
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.9 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto"
           >
-            <a href="#fuzhou" className="px-8 py-4 bg-[var(--huang)] text-[var(--hei)] rounded-full font-bold hover:bg-[var(--huang-light)] transition-all text-lg">
-              祝由符箓
+            <a href="#fuzhou" className="group bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/20 transition-all border border-white/20 hover:border-[var(--huang)]">
+              <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">📜</div>
+              <h3 className="text-xl font-bold text-[var(--huang)] mb-2">祝由符箓</h3>
+              <p className="text-white/70 text-sm">定制灵符 · 祈福转运</p>
             </a>
-            <a href="#fashi" className="px-8 py-4 bg-[var(--qing)] text-white rounded-full font-bold hover:bg-[var(--qing-light)] transition-all text-lg">
-              道家法事
+            
+            <a href="#fashi" className="group bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/20 transition-all border border-white/20 hover:border-[var(--qing)]">
+              <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">⚡</div>
+              <h3 className="text-xl font-bold text-[var(--qing)] mb-2">道家法事</h3>
+              <p className="text-white/70 text-sm">科仪祈福 · 消灾转运</p>
             </a>
-            <a href="#zhongshengji" className="px-8 py-4 border-2 border-[var(--chi)] text-[var(--chi)] rounded-full font-bold hover:bg-[var(--chi)]/10 transition-all text-lg">
-              种生基
+            
+            <a href="#zhongshengji" className="group bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/20 transition-all border border-white/20 hover:border-[var(--chi)]">
+              <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">🏔️</div>
+              <h3 className="text-xl font-bold text-[var(--chi)] mb-2">种生基</h3>
+              <p className="text-white/70 text-sm">改命转运 · 延年益寿</p>
             </a>
           </motion.div>
         </div>

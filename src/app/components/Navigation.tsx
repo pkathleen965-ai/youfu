@@ -9,8 +9,8 @@ const navItems = [
   { href: "/", label: "首页" },
   { href: "/culture", label: "符道文化" },
   { href: "/fuzhou", label: "祝由符箓" },
+  { href: "/fashi", label: "道家法事" },
   { href: "/zhongshengji", label: "种生基" },
-  { href: "/fashi", label: "法事服务" },
   { href: "/cases", label: "真实案例" },
   { href: "/contact", label: "联系我们" },
 ];
