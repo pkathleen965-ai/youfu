@@ -89,12 +89,15 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.9 }}
             className="flex flex-col sm:flex-row gap-4 justify-center"
           >
-            <a href="#zhongshengji" className="px-8 py-4 bg-[var(--huang)] text-[var(--hei)] rounded-full font-bold hover:bg-[var(--huang-light)] transition-all text-lg">
-              种生基服务
+            <a href="#fuzhou" className="px-8 py-4 bg-[var(--huang)] text-[var(--hei)] rounded-full font-bold hover:bg-[var(--huang-light)] transition-all text-lg">
+              祝由符箓
             </a>
-            <Link href="/contact" className="px-8 py-4 border-2 border-[var(--huang)] text-[var(--huang)] rounded-full font-bold hover:bg-[var(--huang)]/10 transition-all text-lg">
-              免费咨询
-            </Link>
+            <a href="#fashi" className="px-8 py-4 bg-[var(--qing)] text-white rounded-full font-bold hover:bg-[var(--qing-light)] transition-all text-lg">
+              道家法事
+            </a>
+            <a href="#zhongshengji" className="px-8 py-4 border-2 border-[var(--chi)] text-[var(--chi)] rounded-full font-bold hover:bg-[var(--chi)]/10 transition-all text-lg">
+              种生基
+            </a>
           </motion.div>
         </div>
 
