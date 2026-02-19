@@ -101,7 +101,7 @@ export default function Home() {
               <p className="text-white/70 text-sm">科仪祈福 · 消灾转运</p>
             </a>
             
-            <a href="#zhongshengji" className="group bg-white/10 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-white/20 transition-all border border-white/20 hover:border-[var(--chi)]">
+            <a href="#zhongshengji" className="group bg-[var(--chi)]/20 backdrop-blur-sm rounded-2xl p-8 text-center hover:bg-[var(--chi)]/30 transition-all border border-[var(--chi)]/50 hover:border-[var(--chi)]">
               <div className="text-5xl mb-4 group-hover:scale-110 transition-transform">🏔️</div>
               <h3 className="text-xl font-bold text-[var(--chi)] mb-2">种生基</h3>
               <p className="text-white/70 text-sm">改命转运 · 延年益寿</p>
