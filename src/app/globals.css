@@ -3,26 +3,44 @@
 @tailwind utilities;
 
 :root {
-  /* 设计师提供的道家五色 - 鲜艳版 */
-  --dao-qing: #1E8D8D;
-  --dao-qing-light: #40E0D0;
-  --dao-qing-dark: #0A2F2F;
+  /* 道家五色 - 主色 */
+  --qing: #1E8D8D;
+  --qing-light: #40E0D0;
+  --qing-dark: #0A2F2F;
   
-  --dao-zi: #6A0DAD;
-  --dao-zi-light: #B266FF;
-  --dao-zi-dark: #4A0080;
+  --zi: #6A0DAD;
+  --zi-light: #B266FF;
+  --zi-dark: #4A0080;
   
-  --dao-huang: #C89F68;
-  --dao-huang-light: #F4C542;
-  --dao-huang-dark: #B8863F;
+  --huang: #C89F68;
+  --huang-light: #F4C542;
+  --huang-dark: #B8863F;
   
-  --dao-chi: #D43A2F;
-  --dao-chi-light: #FF7F50;
-  --dao-chi-dark: #B22222;
+  --chi: #D43A2F;
+  --chi-light: #FF7F50;
+  --chi-dark: #B22222;
   
-  --dao-mo: #1A1A1A;
-  --dao-xuan: #F5F5F5;
-  --dao-bai: #FFFFFF;
+  --mo: #1A1A1A;
+  --xuan: #F5F5F5;
+  --bai: #FFFFFF;
+  --hei: #1A1A1A;
+
+  /* 兼容旧命名 */
+  --dao-qing: var(--qing);
+  --dao-qing-light: var(--qing-light);
+  --dao-qing-dark: var(--qing-dark);
+  --dao-zi: var(--zi);
+  --dao-zi-light: var(--zi-light);
+  --dao-zi-dark: var(--zi-dark);
+  --dao-huang: var(--huang);
+  --dao-huang-light: var(--huang-light);
+  --dao-huang-dark: var(--huang-dark);
+  --dao-chi: var(--chi);
+  --dao-chi-light: var(--chi-light);
+  --dao-chi-dark: var(--chi-dark);
+  --dao-mo: var(--mo);
+  --dao-xuan: var(--xuan);
+  --dao-bai: var(--bai);
 }
 
 @tailwind base;
@@ -42,8 +60,8 @@ html {
 
 body {
   font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
-  background-color: var(--dao-xuan);
-  color: var(--dao-mo);
+  background-color: var(--xuan);
+  color: var(--mo);
   line-height: 1.8;
 }
 
@@ -54,42 +72,42 @@ body {
 
 /* 核心渐变背景 */
 .bg-dao-qing {
-  background: linear-gradient(135deg, var(--dao-qing), var(--dao-qing-light));
+  background: linear-gradient(135deg, var(--qing), var(--qing-light));
 }
 
 .bg-dao-zi {
-  background: linear-gradient(145deg, var(--dao-zi), var(--dao-zi-light));
+  background: linear-gradient(145deg, var(--zi), var(--zi-light));
 }
 
 .bg-dao-huang {
-  background: linear-gradient(120deg, var(--dao-huang-dark), var(--dao-huang-light));
+  background: linear-gradient(120deg, var(--huang-dark), var(--huang-light));
 }
 
 .bg-dao-chi {
-  background: linear-gradient(45deg, var(--dao-chi), var(--dao-chi-light));
+  background: linear-gradient(45deg, var(--chi), var(--chi-light));
 }
 
 .bg-dao-dark {
-  background: linear-gradient(180deg, var(--dao-mo), var(--dao-qing-dark));
+  background: linear-gradient(180deg, var(--mo), var(--qing-dark));
 }
 
 /* 文字渐变 */
 .text-gradient-zi {
-  background: linear-gradient(145deg, var(--dao-zi), var(--dao-zi-light));
+  background: linear-gradient(145deg, var(--zi), var(--zi-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .text-gradient-huang {
-  background: linear-gradient(120deg, var(--dao-huang-dark), var(--dao-huang-light));
+  background: linear-gradient(120deg, var(--huang-dark), var(--huang-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .text-gradient-chi {
-  background: linear-gradient(45deg, var(--dao-chi), var(--dao-chi-light));
+  background: linear-gradient(45deg, var(--chi), var(--chi-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -97,7 +115,7 @@ body {
 
 /* 按钮样式 */
 .btn-primary {
-  background: linear-gradient(145deg, var(--dao-zi), var(--dao-zi-light));
+  background: linear-gradient(145deg, var(--zi), var(--zi-light));
   color: white;
   font-weight: bold;
   padding: 1rem 2rem;
@@ -112,8 +130,8 @@ body {
 }
 
 .btn-huang {
-  background: linear-gradient(120deg, var(--dao-huang-dark), var(--dao-huang-light));
-  color: var(--dao-mo);
+  background: linear-gradient(120deg, var(--huang-dark), var(--huang-light));
+  color: var(--mo);
   font-weight: bold;
   padding: 1rem 2rem;
   border-radius: 9999px;
@@ -127,7 +145,7 @@ body {
 }
 
 .btn-chi {
-  background: linear-gradient(45deg, var(--dao-chi), var(--dao-chi-light));
+  background: linear-gradient(45deg, var(--chi), var(--chi-light));
   color: white;
   font-weight: bold;
   padding: 1rem 2rem;
@@ -218,6 +236,6 @@ body {
 /* 分割线 */
 .divider-dao {
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--dao-huang), transparent);
+  background: linear-gradient(90deg, transparent, var(--huang), transparent);
   margin: 2rem 0;
 }

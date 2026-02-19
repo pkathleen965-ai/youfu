@@ -8,10 +8,21 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        qing: '#3A8B6B',
-        chi: '#B8423A',
-        huang: '#C9A227',
-        bai: '#F5F5F0',
+        qing: '#1E8D8D',
+        'qing-light': '#40E0D0',
+        'qing-dark': '#0A2F2F',
+        zi: '#6A0DAD',
+        'zi-light': '#B266FF',
+        'zi-dark': '#4A0080',
+        huang: '#C89F68',
+        'huang-light': '#F4C542',
+        'huang-dark': '#B8863F',
+        chi: '#D43A2F',
+        'chi-light': '#FF7F50',
+        'chi-dark': '#B22222',
+        mo: '#1A1A1A',
+        xuan: '#F5F5F5',
+        bai: '#FFFFFF',
         hei: '#1A1A1A',
       },
       fontFamily: {
