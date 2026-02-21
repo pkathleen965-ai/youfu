@@ -2,6 +2,12 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
+import { useToast } from "./Toast";
+
+interface FormErrors {
+  name?: string;
+  phone?: string;
+}
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -10,17 +16,59 @@ export default function ContactForm() {
     service: "",
     message: "",
   });
+  const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const { showToast } = useToast();
+
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = "请输入姓名";
+    }
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = "请输入联系电话";
+    } else if (!/^1[3-9]\d{9}$/.test(formData.phone)) {
+      newErrors.phone = "请输入正确的手机号码";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    if (!validateForm()) {
+      showToast("请检查表单填写", "error");
+      return;
+    }
+
     setIsSubmitting(true);
-    
-    await new Promise((resolve) => setTimeout(resolve, 1000));
-    
-    setIsSubmitting(false);
-    setSubmitted(true);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitted(true);
+        showToast("提交成功！我们会尽快联系您", "success");
+      } else {
+        showToast(result.error || "提交失败，请稍后重试", "error");
+      }
+    } catch (error) {
+      console.error("提交错误:", error);
+      showToast("提交失败，请稍后重试", "error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   if (submitted) {
@@ -38,33 +86,55 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-6" noValidate>
       <div>
-        <label className="block text-sm font-medium text-[var(--hei)] mb-2">姓名 *</label>
+        <label className="block text-sm font-medium text-[var(--hei)] mb-2">
+          姓名 <span className="text-red-500">*</span>
+        </label>
         <input
           type="text"
-          required
           value={formData.name}
-          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-          className="w-full px-4 py-3 border border-[var(--qing)]/30 rounded-lg focus:ring-2 focus:ring-[var(--qing)] focus:border-transparent bg-white"
+          onChange={(e) => {
+            setFormData({ ...formData, name: e.target.value });
+            if (errors.name) setErrors({ ...errors, name: undefined });
+          }}
+          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[var(--qing)] focus:border-transparent bg-white ${
+            errors.name ? "border-red-500" : "border-[var(--qing)]/30"
+          }`}
           placeholder="请输入您的姓名"
+          aria-invalid={!!errors.name}
         />
+        {errors.name && (
+          <p className="mt-1 text-sm text-red-500">{errors.name}</p>
+        )}
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-[var(--hei)] mb-2">联系电话 *</label>
+        <label className="block text-sm font-medium text-[var(--hei)] mb-2">
+          联系电话 <span className="text-red-500">*</span>
+        </label>
         <input
           type="tel"
-          required
           value={formData.phone}
-          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-          className="w-full px-4 py-3 border border-[var(--qing)]/30 rounded-lg focus:ring-2 focus:ring-[var(--qing)] focus:border-transparent bg-white"
+          onChange={(e) => {
+            setFormData({ ...formData, phone: e.target.value });
+            if (errors.phone) setErrors({ ...errors, phone: undefined });
+          }}
+          className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-[var(--qing)] focus:border-transparent bg-white ${
+            errors.phone ? "border-red-500" : "border-[var(--qing)]/30"
+          }`}
           placeholder="请输入您的联系电话"
+          aria-invalid={!!errors.phone}
         />
+        {errors.phone && (
+          <p className="mt-1 text-sm text-red-500">{errors.phone}</p>
+        )}
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-[var(--hei)] mb-2">咨询服务</label>
+        <label className="block text-sm font-medium text-[var(--hei)] mb-2">
+          咨询服务
+        </label>
         <select
           value={formData.service}
           onChange={(e) => setFormData({ ...formData, service: e.target.value })}
@@ -79,7 +149,9 @@ export default function ContactForm() {
       </div>
 
       <div>
-        <label className="block text-sm font-medium text-[var(--hei)] mb-2">留言内容</label>
+        <label className="block text-sm font-medium text-[var(--hei)] mb-2">
+          留言内容
+        </label>
         <textarea
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}

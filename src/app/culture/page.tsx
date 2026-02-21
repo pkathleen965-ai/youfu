@@ -1,6 +1,7 @@
 "use client";
 
 import Navigation from "../components/Navigation";
+import Footer from "../components/Footer";
 import { FadeIn, StaggerContainer, StaggerItem } from "../components/Animations";
 import { TaijiImage, BaguaSymbol, Divider, WuXingSymbol } from "../components/TaoistSymbols";
 import { motion } from "framer-motion";
@@ -134,11 +135,7 @@ export default function CulturePage() {
         </section>
       </main>
 
-      <footer className="bg-[var(--hei)] text-white py-8 bg-pattern-dark">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <p className="text-white/60">© 2026 武当后山符合堂 · 符道文化传承中心</p>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
