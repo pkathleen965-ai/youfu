@@ -28,14 +28,14 @@ export default function Home() {
       <AIChat />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-wu-tu bg-pattern-dark">
+      <section className="relative min-h-screen flex items-start pt-12 justify-center overflow-hidden bg-wu-tu bg-pattern-dark">
         <div className="absolute inset-0 opacity-10">
           <BaguaSymbol size={600} className="absolute -top-20 -right-20 text-on-wu-tu" />
         </div>
         
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[120px] animate-pulse-glow" style={{ background: 'rgba(200, 159, 104, 0.3)' }} />
 
-        <div className="relative z-10 text-center px-12 max-w-5xl mx-auto pt-4">
+        <div className="relative z-10 text-center px-12 max-w-5xl mx-auto pt-20">
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
