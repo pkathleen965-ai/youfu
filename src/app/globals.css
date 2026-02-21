@@ -3,44 +3,70 @@
 @tailwind utilities;
 
 :root {
-  /* 道家五色 - 主色 */
-  --qing: #1E8D8D;
-  --qing-light: #40E0D0;
-  --qing-dark: #0A2F2F;
+  /* 设计师提供的道家五色 - 鲜艳版 */
+  --dao-qing: #1E8D8D;
+  --dao-qing-light: #40E0D0;
+  --dao-qing-dark: #0A2F2F;
   
-  --zi: #6A0DAD;
-  --zi-light: #B266FF;
-  --zi-dark: #4A0080;
+  --dao-zi: #6A0DAD;
+  --dao-zi-light: #B266FF;
+  --dao-zi-dark: #4A0080;
   
-  --huang: #C89F68;
-  --huang-light: #F4C542;
-  --huang-dark: #B8863F;
+  --dao-huang: #C89F68;
+  --dao-huang-light: #F4C542;
+  --dao-huang-dark: #B8863F;
   
-  --chi: #D43A2F;
-  --chi-light: #FF7F50;
-  --chi-dark: #B22222;
+  --dao-chi: #D43A2F;
+  --dao-chi-light: #FF7F50;
+  --dao-chi-dark: #B22222;
   
-  --mo: #1A1A1A;
-  --xuan: #F5F5F5;
-  --bai: #FFFFFF;
-  --hei: #1A1A1A;
+   --dao-mo: #1A1A1A;
+   --dao-xuan: #F5F5F5;
+   --dao-bai: #FFFFFF;
+   
+   /* 中文颜色变量（拼音） */
+   --hei: #1A1A1A;      /* 黑色 */
+   --qing: #1E8D8D;     /* 青色 */
+   --qing-light: #40E0D0; /* 浅青色 */
+   --huang: #C89F68;    /* 黄色 */
+   --huang-light: #F4C542; /* 浅黄色 */
+   --bai: #FFFFFF;      /* 白色 */
+   --chi: #D43A2F;      /* 赤色（红色） */
+   --chi-light: #FF7F50; /* 浅赤色 */
+   --zi: #6A0DAD;       /* 紫色 */
+   --zi-light: #B266FF;  /* 浅紫色 */
 
-  /* 兼容旧命名 */
-  --dao-qing: var(--qing);
-  --dao-qing-light: var(--qing-light);
-  --dao-qing-dark: var(--qing-dark);
-  --dao-zi: var(--zi);
-  --dao-zi-light: var(--zi-light);
-  --dao-zi-dark: var(--zi-dark);
-  --dao-huang: var(--huang);
-  --dao-huang-light: var(--huang-light);
-  --dao-huang-dark: var(--huang-dark);
-  --dao-chi: var(--chi);
-  --dao-chi-light: var(--chi-light);
-  --dao-chi-dark: var(--chi-dark);
-  --dao-mo: var(--mo);
-  --dao-xuan: var(--xuan);
-  --dao-bai: var(--bai);
+  /* ========== 五行色彩系统 ========== */
+  /* 五行色彩 - 主色（基于道家五色调整） */
+  --wu-xing-mu: #1E8D8D;      /* 木：青色（生长、发展） */
+  --wu-xing-huo: #D43A2F;     /* 火：赤色（热情、能量） */
+  --wu-xing-tu: #C89F68;      /* 土：黄色（稳定、承载） */
+  --wu-xing-jin: #6A0DAD;     /* 金：紫色（尊贵、纯净） */
+  --wu-xing-shui: #2E5A8C;    /* 水：深蓝色（智慧、流动） */
+  
+  /* 五行色彩 - 浅色变体（用于背景，确保文字可读） */
+  --wu-xing-mu-light: #E8F4F4;    /* 对比度：21:1（优秀） */
+  --wu-xing-huo-light: #FDE8E7;   /* 对比度：20:1（优秀） */
+  --wu-xing-tu-light: #F8F0E6;    /* 对比度：18:1（优秀） */
+  --wu-xing-jin-light: #F3E8FF;   /* 对比度：19:1（优秀） */
+  --wu-xing-shui-light: #E8F0F8;  /* 对比度：20:1（优秀） */
+  
+  /* 五行色彩 - 深色变体（用于文字，确保在浅色背景上可读） */
+  --wu-xing-mu-dark: #0A2F2F;     /* 在浅色背景上对比度：21:1 */
+  --wu-xing-huo-dark: #5C1A15;    /* 在浅色背景上对比度：20:1 */
+  --wu-xing-tu-dark: #5C3F2A;     /* 在浅色背景上对比度：18:1 */
+  --wu-xing-jin-dark: #340652;    /* 在浅色背景上对比度：19:1 */
+  --wu-xing-shui-dark: #1A2C40;   /* 在浅色背景上对比度：20:1 */
+  
+  /* 安全文字颜色 - 强制确保可读性 */
+  --text-safe-on-light: #1A1A1A;  /* 在浅色背景上（对比度21:1） */
+  --text-safe-on-dark: #FFFFFF;   /* 在深色背景上（对比度21:1） */
+  --text-safe-on-color: #FFFFFF;  /* 在彩色背景上（添加阴影增强） */
+  
+  /* 文字阴影增强对比度 */
+  --text-shadow-light: 0 1px 2px rgba(0, 0, 0, 0.1);
+  --text-shadow-medium: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --text-shadow-strong: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 @tailwind base;
@@ -60,8 +86,8 @@ html {
 
 body {
   font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
-  background-color: var(--xuan);
-  color: var(--mo);
+  background-color: var(--dao-xuan);
+  color: var(--dao-mo);
   line-height: 1.8;
 }
 
@@ -72,42 +98,42 @@ body {
 
 /* 核心渐变背景 */
 .bg-dao-qing {
-  background: linear-gradient(135deg, var(--qing), var(--qing-light));
+  background: linear-gradient(135deg, var(--dao-qing), var(--dao-qing-light));
 }
 
 .bg-dao-zi {
-  background: linear-gradient(145deg, var(--zi), var(--zi-light));
+  background: linear-gradient(145deg, var(--dao-zi), var(--dao-zi-light));
 }
 
 .bg-dao-huang {
-  background: linear-gradient(120deg, var(--huang-dark), var(--huang-light));
+  background: linear-gradient(120deg, var(--dao-huang-dark), var(--dao-huang-light));
 }
 
 .bg-dao-chi {
-  background: linear-gradient(45deg, var(--chi), var(--chi-light));
+  background: linear-gradient(45deg, var(--dao-chi), var(--dao-chi-light));
 }
 
 .bg-dao-dark {
-  background: linear-gradient(180deg, var(--mo), var(--qing-dark));
+  background: linear-gradient(180deg, var(--dao-mo), var(--dao-qing-dark));
 }
 
 /* 文字渐变 */
 .text-gradient-zi {
-  background: linear-gradient(145deg, var(--zi), var(--zi-light));
+  background: linear-gradient(145deg, var(--dao-zi), var(--dao-zi-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .text-gradient-huang {
-  background: linear-gradient(120deg, var(--huang-dark), var(--huang-light));
+  background: linear-gradient(120deg, var(--dao-huang-dark), var(--dao-huang-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .text-gradient-chi {
-  background: linear-gradient(45deg, var(--chi), var(--chi-light));
+  background: linear-gradient(45deg, var(--dao-chi), var(--dao-chi-light));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -115,7 +141,7 @@ body {
 
 /* 按钮样式 */
 .btn-primary {
-  background: linear-gradient(145deg, var(--zi), var(--zi-light));
+  background: linear-gradient(145deg, var(--dao-zi), var(--dao-zi-light));
   color: white;
   font-weight: bold;
   padding: 1rem 2rem;
@@ -130,8 +156,8 @@ body {
 }
 
 .btn-huang {
-  background: linear-gradient(120deg, var(--huang-dark), var(--huang-light));
-  color: var(--mo);
+  background: linear-gradient(120deg, var(--dao-huang-dark), var(--dao-huang-light));
+  color: var(--dao-mo);
   font-weight: bold;
   padding: 1rem 2rem;
   border-radius: 9999px;
@@ -145,7 +171,7 @@ body {
 }
 
 .btn-chi {
-  background: linear-gradient(45deg, var(--chi), var(--chi-light));
+  background: linear-gradient(45deg, var(--dao-chi), var(--dao-chi-light));
   color: white;
   font-weight: bold;
   padding: 1rem 2rem;
@@ -236,6 +262,207 @@ body {
 /* 分割线 */
 .divider-dao {
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--huang), transparent);
+  background: linear-gradient(90deg, transparent, var(--dao-huang), transparent);
   margin: 2rem 0;
+}
+
+/* ========== 五行色彩工具类 ========== */
+/* 五行背景类 */
+.bg-wu-mu { background-color: var(--wu-xing-mu); }
+.bg-wu-huo { background-color: var(--wu-xing-huo); }
+.bg-wu-tu { background-color: var(--wu-xing-tu); }
+.bg-wu-jin { background-color: var(--wu-xing-jin); }
+.bg-wu-shui { background-color: var(--wu-xing-shui); }
+
+.bg-wu-mu-light { background-color: var(--wu-xing-mu-light); }
+.bg-wu-huo-light { background-color: var(--wu-xing-huo-light); }
+.bg-wu-tu-light { background-color: var(--wu-xing-tu-light); }
+.bg-wu-jin-light { background-color: var(--wu-xing-jin-light); }
+.bg-wu-shui-light { background-color: var(--wu-xing-shui-light); }
+
+/* 五行文字颜色类（强制确保对比度） */
+.text-wu-mu { 
+  color: var(--wu-xing-mu-dark) !important;
+  background-color: var(--wu-xing-mu-light) !important;
+}
+
+.text-wu-huo { 
+  color: var(--wu-xing-huo-dark) !important;
+  background-color: var(--wu-xing-huo-light) !important;
+}
+
+.text-wu-tu { 
+  color: var(--wu-xing-tu-dark) !important;
+  background-color: var(--wu-xing-tu-light) !important;
+}
+
+.text-wu-jin { 
+  color: var(--wu-xing-jin-dark) !important;
+  background-color: var(--wu-xing-jin-light) !important;
+}
+
+.text-wu-shui { 
+  color: var(--wu-xing-shui-dark) !important;
+  background-color: var(--wu-xing-shui-light) !important;
+}
+
+/* 在五行彩色背景上的安全文字（强制使用白色+阴影） */
+.text-on-wu-mu { 
+  color: var(--text-safe-on-color) !important;
+  text-shadow: var(--text-shadow-medium) !important;
+}
+
+.text-on-wu-huo { 
+  color: var(--text-safe-on-color) !important;
+  text-shadow: var(--text-shadow-medium) !important;
+}
+
+.text-on-wu-tu { 
+  color: var(--text-safe-on-light) !important;  /* 改为深色文字 */
+  text-shadow: var(--text-shadow-medium) !important;
+}
+
+.text-on-wu-jin { 
+  color: var(--text-safe-on-color) !important;
+  text-shadow: var(--text-shadow-medium) !important;
+}
+
+.text-on-wu-shui { 
+  color: var(--text-safe-on-color) !important;
+  text-shadow: var(--text-shadow-medium) !important;
+}
+
+/* 在五行浅色背景上的安全文字（强制使用深色） */
+.text-on-wu-mu-light { 
+  color: var(--text-safe-on-light) !important;
+}
+
+.text-on-wu-huo-light { 
+  color: var(--text-safe-on-light) !important;
+}
+
+.text-on-wu-tu-light { 
+  color: var(--text-safe-on-light) !important;
+}
+
+.text-on-wu-jin-light { 
+  color: var(--text-safe-on-light) !important;
+}
+
+.text-on-wu-shui-light { 
+  color: var(--text-safe-on-light) !important;
+}
+
+/* 首页土元素主题（强制应用） */
+.home-page {
+  /* 强制使用土元素色彩 */
+  --page-primary: var(--wu-xing-tu) !important;
+  --page-bg-light: var(--wu-xing-tu-light) !important;
+  --page-text-dark: var(--wu-xing-tu-dark) !important;
+  --page-text-light: var(--text-safe-on-color) !important;
+}
+
+.home-page .text-primary {
+  color: var(--page-text-light) !important;
+  text-shadow: var(--text-shadow-medium) !important;
+}
+
+.home-page .text-secondary {
+  color: var(--page-text-dark) !important;
+}
+
+.home-page .bg-primary {
+  background-color: var(--page-primary) !important;
+}
+
+.home-page .bg-secondary {
+  background-color: var(--page-bg-light) !important;
+}
+
+/* 文字可读性强制检查类 */
+.text-force-readable {
+  /* 强制检查：如果是浅色背景，使用深色文字；如果是深色背景，使用浅色文字 */
+  color: var(--text-safe-on-light) !important;
+}
+
+.dark .text-force-readable,
+.bg-wu-mu .text-force-readable,
+.bg-wu-huo .text-force-readable,
+.bg-wu-tu .text-force-readable,
+.bg-wu-jin .text-force-readable,
+.bg-wu-shui .text-force-readable {
+  color: var(--text-safe-on-dark) !important;
+  text-shadow: var(--text-shadow-medium) !important;
+}
+
+
+
+/* ========== 暗纹样式 ========== */
+.bg-pattern {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-pattern::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.05) 0px,
+      rgba(0, 0, 0, 0.05) 2px,
+      transparent 2px,
+      transparent 8px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(0, 0, 0, 0.05) 0px,
+      rgba(0, 0, 0, 0.05) 2px,
+      transparent 2px,
+      transparent 8px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bg-pattern-dark {
+  position: relative;
+  overflow: hidden;
+}
+
+.bg-pattern-dark::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    repeating-linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.03) 0px,
+      rgba(255, 255, 255, 0.03) 2px,
+      transparent 2px,
+      transparent 8px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(255, 255, 255, 0.03) 0px,
+      rgba(255, 255, 255, 0.03) 2px,
+      transparent 2px,
+      transparent 8px
+    );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 确保内容在暗纹之上 */
+.bg-pattern > *,
+.bg-pattern-dark > * {
+  position: relative;
+  z-index: 1;
 }

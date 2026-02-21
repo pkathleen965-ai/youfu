@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { TaijiSymbol } from "./TaoistSymbols";
+import { TaijiImage } from "./TaoistSymbols";
 
 const navItems = [
   { href: "/", label: "首页" },
@@ -28,8 +28,8 @@ export default function Navigation() {
   }, []);
 
   return (
-    <motion.header
-      initial={{ y: -100 }}
+     <motion.header
+      initial={{ y: 0 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -39,12 +39,12 @@ export default function Navigation() {
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16 sm:h-20">
           <Link href="/" className="flex items-center gap-3 group">
-            <TaijiSymbol size={36} className="text-[var(--zi-light)]" />
+              <TaijiImage size={48} />
             <div className="flex flex-col">
-              <span className="text-lg sm:text-xl font-bold text-white group-hover:text-[var(--zi-light)] transition-colors font-serif drop-shadow-lg">
-                有符之人
-              </span>
-              <span className="text-xs text-[var(--huang-light)] font-medium tracking-wider drop-shadow">武当后山符合堂</span>
+               <span className="text-lg sm:text-xl font-bold text-[var(--hei)] group-hover:text-[var(--qing)] transition-colors font-serif">
+                 武当后山符合堂
+               </span>
+               <span className="text-xs text-[var(--huang)] font-medium tracking-wider">符道文化传承</span>
             </div>
           </Link>
 
@@ -53,7 +53,7 @@ export default function Navigation() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="text-white/90 hover:text-[var(--huang-light)] transition-colors font-medium text-sm tracking-wide drop-shadow"
+                className="text-[var(--hei)] hover:text-[var(--qing)] transition-colors font-medium text-sm tracking-wide"
               >
                 {item.label}
               </Link>
@@ -62,7 +62,7 @@ export default function Navigation() {
 
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 text-white"
+            className="lg:hidden p-2 text-[var(--hei)]"
           >
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               {isMobileMenuOpen ? (

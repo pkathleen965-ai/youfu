@@ -2,7 +2,7 @@
 
 import Navigation from "../components/Navigation";
 import { FadeIn, StaggerContainer, StaggerItem } from "../components/Animations";
-import { TaijiSymbol, Divider } from "../components/TaoistSymbols";
+import { TaijiImage, Divider } from "../components/TaoistSymbols";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -27,12 +27,12 @@ export default function FashiPage() {
       <Navigation />
 
       <main className="pt-20">
-        <section className="py-16 sm:py-24 bg-gradient-to-b from-[var(--chi)] to-[var(--chi-light)] text-white relative overflow-hidden">
+        <section className="py-16 sm:py-24 bg-gradient-to-b from-[var(--chi)] to-[var(--chi-light)] text-white relative overflow-hidden bg-pattern-dark">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <FadeIn>
-              <div className="flex justify-center mb-6">
-                <TaijiSymbol size={80} className="text-[var(--huang)]" />
-              </div>
+               <div className="flex justify-center mb-6 mt-12">
+                   <TaijiImage size={120} className="text-[var(--huang)]" />
+               </div>
               <h1 className="text-4xl sm:text-6xl font-bold mb-6 font-serif">法事服务</h1>
               <Divider className="my-6" />
               <p className="text-xl text-white/80">正统道家法事，祈福消灾转运</p>
@@ -40,7 +40,7 @@ export default function FashiPage() {
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 bg-white">
+        <section className="py-16 sm:py-20 bg-white bg-pattern">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
               <div className="text-center mb-12">
@@ -74,7 +74,7 @@ export default function FashiPage() {
             <StaggerContainer className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {fashiServices.map((item, index) => (
                 <StaggerItem key={index}>
-                  <motion.div whileHover={{ y: -5 }} className="bg-white rounded-xl overflow-hidden shadow-taoist hover-lift">
+                   <motion.div whileHover={{ y: -5 }} className="bg-white bg-pattern rounded-xl overflow-hidden shadow-taoist hover-lift">
                     <div className="bg-gradient-to-br from-[var(--chi)] to-[var(--chi-light)] p-6 text-center">
                       <div className="text-5xl mb-2">{item.icon}</div>
                       <h3 className="text-xl font-bold text-white">{item.name}</h3>
@@ -90,7 +90,7 @@ export default function FashiPage() {
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 bg-white">
+        <section className="py-16 sm:py-20 bg-white bg-pattern">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
               <div className="text-center mb-12">
@@ -120,7 +120,7 @@ export default function FashiPage() {
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 bg-gradient-to-b from-[var(--chi)] to-[var(--chi-light)] text-white">
+        <section className="py-16 sm:py-20 bg-gradient-to-b from-[var(--chi)] to-[var(--chi-light)] text-white bg-pattern-dark">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <FadeIn>
               <h2 className="text-3xl font-bold mb-6 font-serif">预约法事服务</h2>
@@ -133,7 +133,7 @@ export default function FashiPage() {
         </section>
       </main>
 
-      <footer className="bg-[var(--hei)] text-white py-8">
+      <footer className="bg-[var(--hei)] text-white py-8 bg-pattern-dark">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-white/60">© 2026 武当后山符合堂 · 符道文化传承中心</p>
         </div>

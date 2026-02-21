@@ -2,7 +2,7 @@
 
 import Navigation from "../components/Navigation";
 import { FadeIn } from "../components/Animations";
-import { TaijiSymbol, BaguaSymbol, Divider } from "../components/TaoistSymbols";
+import { TaijiImage, BaguaSymbol, Divider } from "../components/TaoistSymbols";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -41,10 +41,10 @@ export default function ZhongShengJiPage() {
       <Navigation />
 
       <main className="pt-20">
-        <section className="py-16 sm:py-24 bg-gradient-to-b from-[var(--hei)] via-[var(--hei)] to-[var(--hei)]/95 text-white relative overflow-hidden">
+        <section className="py-16 sm:py-24 bg-gradient-to-b from-[var(--hei)] via-[var(--hei)] to-[var(--hei)]/95 text-white relative overflow-hidden bg-pattern-dark">
           <div className="absolute inset-0 opacity-5">
             <BaguaSymbol size={600} className="absolute -top-40 -right-40 text-[var(--huang)]" />
-            <TaijiSymbol size={300} className="absolute -bottom-20 -left-20 text-[var(--huang)]" />
+              <TaijiImage size={400} className="absolute -bottom-30 -left-30" />
           </div>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <FadeIn>
@@ -62,7 +62,7 @@ export default function ZhongShengJiPage() {
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 bg-white">
+        <section className="py-16 sm:py-20 bg-white bg-pattern">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
               <div className="prose prose-lg max-w-none text-[var(--hei)]/80 leading-relaxed">
@@ -89,7 +89,7 @@ export default function ZhongShengJiPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {benefits.map((item, index) => (
                 <FadeIn key={index} delay={index * 0.1}>
-                  <motion.div whileHover={{ y: -5 }} className="bg-white rounded-xl p-5 shadow-taoist hover-lift text-center">
+                   <motion.div whileHover={{ y: -5 }} className="bg-white bg-pattern rounded-xl p-5 shadow-taoist hover-lift text-center">
                     <div className="text-3xl mb-3">{item.icon}</div>
                     <h3 className="text-lg font-bold text-[var(--qing)] mb-1">{item.title}</h3>
                     <p className="text-[var(--hei)]/60 text-sm">{item.desc}</p>
@@ -100,7 +100,7 @@ export default function ZhongShengJiPage() {
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 bg-white">
+        <section className="py-16 sm:py-20 bg-white bg-pattern">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
               <div className="text-center mb-12">
@@ -136,7 +136,7 @@ export default function ZhongShengJiPage() {
             <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {process.map((item, index) => (
                 <FadeIn key={index} delay={index * 0.1}>
-                  <div className="bg-white rounded-xl p-5 shadow-taoist">
+                   <div className="bg-white bg-pattern rounded-xl p-5 shadow-taoist">
                     <div className="flex items-start gap-3">
                       <div className="w-10 h-10 bg-gradient-to-br from-[var(--huang)] to-[var(--huang-light)] rounded-full flex items-center justify-center text-[var(--hei)] font-bold shrink-0">
                         {item.step}
@@ -153,7 +153,7 @@ export default function ZhongShengJiPage() {
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 bg-white">
+        <section className="py-16 sm:py-20 bg-white bg-pattern">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
               <div className="bg-[var(--chi)]/10 border border-[var(--chi)]/30 rounded-xl p-6 sm:p-8">
@@ -183,7 +183,7 @@ export default function ZhongShengJiPage() {
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 bg-gradient-to-b from-[var(--huang)] to-[var(--huang-light)] text-[var(--hei)]">
+        <section className="py-16 sm:py-20 bg-gradient-to-b from-[var(--huang)] to-[var(--huang-light)] text-[var(--hei)] bg-pattern-dark">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <FadeIn>
               <h2 className="text-3xl font-bold mb-4 font-serif">种生基为高端定制服务</h2>
@@ -201,7 +201,7 @@ export default function ZhongShengJiPage() {
         </section>
       </main>
 
-      <footer className="bg-[var(--hei)] text-white py-8">
+      <footer className="bg-[var(--hei)] text-white py-8 bg-pattern-dark">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-white/60">© 2026 武当后山符合堂 · 符道文化传承中心</p>
         </div>

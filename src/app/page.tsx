@@ -4,7 +4,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import Navigation from "./components/Navigation";
 import { FadeIn, StaggerContainer, StaggerItem } from "./components/Animations";
-import { TaijiSymbol, BaguaSymbol, WuXingSymbol } from "./components/TaoistSymbols";
+import { TaijiImage, BaguaSymbol, Divider, WuXingSymbol } from "./components/TaoistSymbols";
 
 const fashiServices = [
   { id: 1, name: "安太岁", desc: "化解流年不利，祈福平安顺遂", icon: "🐉" },
@@ -35,54 +35,45 @@ const cases = [
 
 export default function Home() {
   return (
-    <div className="min-h-screen" style={{ backgroundColor: 'var(--dao-xuan)' }}>
+    <div className="home-page min-h-screen">
       <Navigation />
 
-      {/* Hero Section - 道法青背景，紫气东来强调 */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-dao-qing bg-cloud">
+      {/* Hero Section - 土元素主题（中央戊己土，厚德载物） */}
+      <section className="relative min-h-screen flex items-start pt-12 justify-center overflow-hidden bg-wu-tu">
         <div className="absolute inset-0 opacity-10">
-          <BaguaSymbol size={600} className="absolute -top-20 -right-20" style={{ color: 'var(--dao-huang-light)' }} />
-          <TaijiSymbol size={300} className="absolute -bottom-10 -left-10" style={{ color: 'var(--dao-huang-light)' }} />
+          <BaguaSymbol size={600} className="absolute -top-20 -right-20 text-on-wu-tu" />
+             <TaijiImage size={400} className="absolute -bottom-20 -left-20 opacity-20" />
         </div>
         
-        {/* 紫色光晕效果 */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[120px] animate-pulse-glow" style={{ background: 'rgba(106, 13, 173, 0.3)' }} />
+        {/* 土黄色光晕效果 */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full blur-[120px] animate-pulse-glow" style={{ background: 'rgba(200, 159, 104, 0.3)' }} />
 
-        <div className="relative z-10 text-center px-4 max-w-5xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1 }}
-            className="mb-8"
-          >
-            <div className="relative inline-block glow-huang">
-              <TaijiSymbol size={120} style={{ color: 'var(--dao-huang-light)' }} />
-            </div>
-          </motion.div>
+           <div className="relative z-10 text-center px-12 max-w-5xl mx-auto pt-4">
+             <motion.div
+              initial={{ opacity: 0, scale: 0.5 }}
+              animate={{ opacity: 1, scale: 1 }}
+               transition={{ duration: 1 }}
+               className="mb-6 mt-4"
+            >
+              <div className="relative inline-block">
+                  <TaijiImage size={180} />
+              </div>
+            </motion.div>
 
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-            className="text-5xl sm:text-7xl lg:text-8xl font-bold mb-2 font-serif text-gradient-zi drop-shadow-lg"
-          >
-            有符之人
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-2xl sm:text-3xl text-white mb-4 font-serif text-gradient-huang"
-          >
-            武当后山符合堂
-          </motion.p>
+            <motion.h1
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.3 }}
+              className="text-5xl sm:text-7xl lg:text-8xl font-bold mb-6 font-serif text-on-wu-tu drop-shadow-lg"
+            >
+               有<span style={{color: 'var(--chi)'}}>符</span>之人
+            </motion.h1>
 
           <motion.p
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-2xl sm:text-3xl text-white mb-4 font-serif"
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-2xl sm:text-3xl mb-4 font-serif text-on-wu-tu"
           >
             道法自然 · 祝由通神
           </motion.p>
@@ -91,38 +82,29 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.7 }}
-            className="text-white/80 mb-12 max-w-2xl mx-auto text-lg"
+            className="mb-12 max-w-2xl mx-auto text-lg text-on-wu-tu"
           >
             传承千年道统，弘扬符箓文化，助您趋吉避凶、转运改命
           </motion.p>
 
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
-          >
-            <a href="#services" className="btn-huang text-lg px-10 py-4">
+           <motion.div
+             initial={{ opacity: 0, y: 30 }}
+             animate={{ opacity: 1, y: 0 }}
+             transition={{ duration: 0.8, delay: 0.9 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center mb-8"
+           >
+            <a href="#services" className="btn-huang text-lg px-10 py-4 text-force-readable">
               探索服务
             </a>
-            <Link href="/contact" className="btn-primary text-lg px-10 py-4">
+            <Link href="/contact" className="btn-primary text-lg px-10 py-4 text-force-readable">
               预约咨询
             </Link>
           </motion.div>
         </div>
-
-        <motion.div
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <div className="text-white/50 text-sm">向下滚动</div>
-          <div className="text-white/50 text-2xl mt-2">↓</div>
-        </motion.div>
       </section>
 
       {/* 三大核心服务 - 五行色 */}
-      <section id="services" className="py-24" style={{ background: 'linear-gradient(180deg, var(--dao-qing-dark), var(--dao-qing))' }}>
+      <section id="services" className="py-24 bg-pattern-dark" style={{ background: 'linear-gradient(180deg, var(--dao-qing-dark), var(--dao-qing))' }}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-16">
@@ -130,6 +112,16 @@ export default function Home() {
                 三大核心服务
               </h2>
               <p className="text-white/70 text-lg">承袭道统，运用五行之理，助您转运改命</p>
+            </div>
+           </FadeIn>
+
+          {/* 引导文字 */}
+          <FadeIn>
+            <div className="text-center mb-8">
+              <p className="text-white/80 text-lg mb-4">
+                点击下方服务探索详情，或直接预约咨询
+              </p>
+              <Divider />
             </div>
           </FadeIn>
 
@@ -186,7 +178,7 @@ export default function Home() {
       </section>
 
       {/* 符道文化 - 宣纸白底色 */}
-      <section id="culture" className="py-24" style={{ backgroundColor: 'var(--dao-xuan)' }}>
+      <section id="culture" className="py-24 bg-pattern" style={{ backgroundColor: 'var(--dao-xuan)' }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-16">
@@ -223,7 +215,7 @@ export default function Home() {
       </section>
 
       {/* 祝由符箓服务 - 青色主题 */}
-      <section id="fuzhou" className="py-24" style={{ background: 'linear-gradient(180deg, var(--dao-qing), var(--dao-qing-dark))' }}>
+      <section id="fuzhou" className="py-24 bg-pattern-dark" style={{ background: 'linear-gradient(180deg, var(--dao-qing), var(--dao-qing-dark))' }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-16">
@@ -258,7 +250,7 @@ export default function Home() {
       </section>
 
       {/* 道家法事服务 - 深色模式，红色点缀 */}
-      <section id="fashi" className="py-24 bg-dao-dark">
+      <section id="fashi" className="py-24 bg-dao-dark bg-pattern-dark">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-16">
@@ -293,7 +285,7 @@ export default function Home() {
       </section>
 
       {/* 种生基 - 玄黄土主题 */}
-      <section id="zhongshengji" className="py-24" style={{ background: 'linear-gradient(180deg, var(--dao-huang), #D2691E)' }}>
+      <section id="zhongshengji" className="py-24 bg-pattern-dark" style={{ background: 'linear-gradient(180deg, var(--dao-huang), #D2691E)' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
             <div className="text-6xl mb-6">🏔️</div>
@@ -310,7 +302,7 @@ export default function Home() {
       </section>
 
       {/* 真实案例 - 紫色主题 */}
-      <section id="cases" className="py-24" style={{ background: 'linear-gradient(180deg, var(--dao-zi-dark), var(--dao-zi))' }}>
+      <section id="cases" className="py-24 bg-pattern-dark" style={{ background: 'linear-gradient(180deg, var(--dao-zi-dark), var(--dao-zi))' }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
             <div className="text-center mb-16">
@@ -354,11 +346,11 @@ export default function Home() {
       </section>
 
       {/* 联系我们 - 道法青主题 */}
-      <section id="contact" className="py-24 bg-dao-qing bg-cloud">
+      <section id="contact" className="py-24 bg-dao-qing bg-cloud bg-pattern-dark">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
             <div className="relative inline-block mb-8 glow-huang">
-              <TaijiSymbol size={80} style={{ color: 'var(--dao-huang-light)' }} />
+                <TaijiImage size={120} className="text-[var(--dao-huang-light)]" />
             </div>
             <h2 className="text-4xl sm:text-5xl font-bold text-gradient-huang mb-6 font-serif">联系我们</h2>
             <p className="text-white/80 mb-8 text-lg">传承道统 · 开启幸福人生</p>
@@ -375,12 +367,12 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 border-t" style={{ backgroundColor: 'var(--dao-mo)', borderColor: 'rgba(200,159,104,0.2)' }}>
+      <footer className="py-12 border-t bg-pattern-dark" style={{ backgroundColor: 'var(--dao-mo)', borderColor: 'rgba(200,159,104,0.2)' }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8 mb-8">
             <div>
               <div className="flex items-center gap-3 mb-4">
-                <TaijiSymbol size={32} style={{ color: 'var(--dao-huang)' }} />
+                  <TaijiImage size={48} className="text-[var(--dao-huang)]" />
                 <span className="text-lg font-bold font-serif text-gradient-huang">武当后山符合堂</span>
               </div>
               <p className="text-white/60 text-sm">传承道家符箓文化<br />弘扬祝由智慧</p>

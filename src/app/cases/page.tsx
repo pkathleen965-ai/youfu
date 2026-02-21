@@ -2,7 +2,7 @@
 
 import Navigation from "../components/Navigation";
 import { FadeIn, StaggerContainer, StaggerItem } from "../components/Animations";
-import { TaijiSymbol, Divider } from "../components/TaoistSymbols";
+import { TaijiImage, Divider } from "../components/TaoistSymbols";
 import { motion } from "framer-motion";
 import Link from "next/link";
 
@@ -29,7 +29,7 @@ export default function CasesPage() {
       <Navigation />
 
       <main className="pt-20">
-        <section className="py-16 sm:py-24 bg-gradient-to-b from-[var(--hei)] to-[var(--hei)] text-white relative overflow-hidden">
+        <section className="py-16 sm:py-24 bg-gradient-to-b from-[var(--hei)] to-[var(--hei)] text-white relative overflow-hidden bg-pattern-dark">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <FadeIn>
               <h1 className="text-4xl sm:text-6xl font-bold mb-6 font-serif">真实案例</h1>
@@ -39,7 +39,7 @@ export default function CasesPage() {
           </div>
         </section>
 
-        <section className="py-12 sm:py-16 bg-white border-b">
+        <section className="py-12 sm:py-16 bg-white bg-pattern border-b">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
               {[
@@ -79,7 +79,7 @@ export default function CasesPage() {
             <StaggerContainer className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {cases.map((item) => (
                 <StaggerItem key={item.id}>
-                  <motion.div whileHover={{ y: -5 }} className="bg-white rounded-xl p-6 shadow-taoist h-full flex flex-col">
+                   <motion.div whileHover={{ y: -5 }} className="bg-white bg-pattern rounded-xl p-6 shadow-taoist h-full flex flex-col">
                     <div className="flex items-center gap-3 mb-4">
                       <div className="w-12 h-12 bg-[var(--qing)] text-white rounded-full flex items-center justify-center font-bold text-lg">
                         {item.name[0]}
@@ -108,7 +108,7 @@ export default function CasesPage() {
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 bg-gradient-to-b from-[var(--qing)] to-[var(--qing-light)] text-white">
+        <section className="py-16 sm:py-20 bg-gradient-to-b from-[var(--qing)] to-[var(--qing-light)] text-white bg-pattern-dark">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <FadeIn>
               <h2 className="text-3xl font-bold mb-6 font-serif">您也有故事想分享吗？</h2>
@@ -121,7 +121,7 @@ export default function CasesPage() {
         </section>
       </main>
 
-      <footer className="bg-[var(--hei)] text-white py-8">
+      <footer className="bg-[var(--hei)] text-white py-8 bg-pattern-dark">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-white/60">© 2026 武当后山符合堂 · 符道文化传承中心</p>
         </div>

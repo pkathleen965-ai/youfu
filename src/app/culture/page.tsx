@@ -2,7 +2,7 @@
 
 import Navigation from "../components/Navigation";
 import { FadeIn, StaggerContainer, StaggerItem } from "../components/Animations";
-import { TaijiSymbol, BaguaSymbol, Divider, WuXingSymbol } from "../components/TaoistSymbols";
+import { TaijiImage, BaguaSymbol, Divider, WuXingSymbol } from "../components/TaoistSymbols";
 import { motion } from "framer-motion";
 
 const cultureTopics = [
@@ -26,15 +26,15 @@ export default function CulturePage() {
       <Navigation />
 
       <main className="pt-20">
-        <section className="py-16 sm:py-24 bg-gradient-to-b from-[var(--hei)] via-[var(--hei)] to-[var(--qing)] text-white relative overflow-hidden">
+        <section className="py-16 sm:py-24 bg-gradient-to-b from-[var(--hei)] via-[var(--hei)] to-[var(--qing)] text-white relative overflow-hidden bg-pattern-dark">
           <div className="absolute inset-0 opacity-10">
             <BaguaSymbol size={400} className="absolute -top-20 -right-20 text-[var(--huang)]" />
           </div>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <FadeIn>
-              <div className="flex justify-center mb-6">
-                <TaijiSymbol size={80} className="text-[var(--huang)]" />
-              </div>
+               <div className="flex justify-center mb-6 mt-12">
+                   <TaijiImage size={120} className="text-[var(--huang)]" />
+               </div>
               <h1 className="text-4xl sm:text-6xl font-bold mb-6 font-serif">符道文化</h1>
               <Divider className="my-6" />
               <p className="text-xl text-[var(--huang)]">传承千年智慧，探索符与福的奥秘</p>
@@ -42,7 +42,7 @@ export default function CulturePage() {
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 bg-white">
+        <section className="py-16 sm:py-20 bg-white bg-pattern">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
               <div className="text-center mb-12">
@@ -79,7 +79,7 @@ export default function CulturePage() {
             <StaggerContainer className="grid md:grid-cols-2 gap-8">
               {cultureTopics.map((topic, index) => (
                 <StaggerItem key={index}>
-                  <motion.div whileHover={{ y: -5 }} className="bg-white p-8 rounded-xl shadow-taoist hover-lift">
+                   <motion.div whileHover={{ y: -5 }} className="bg-white bg-pattern p-8 rounded-xl shadow-taoist hover-lift">
                     <div className="text-4xl mb-4">{topic.icon}</div>
                     <h3 className="text-xl font-bold text-[var(--hei)] mb-3 font-serif">{topic.title}</h3>
                     <p className="text-[var(--hei)]/70">{topic.content}</p>
@@ -90,7 +90,7 @@ export default function CulturePage() {
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 bg-white">
+        <section className="py-16 sm:py-20 bg-white bg-pattern">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
               <div className="text-center mb-12">
@@ -119,10 +119,10 @@ export default function CulturePage() {
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 bg-gradient-to-b from-[var(--qing)] to-[var(--qing-light)] text-white">
+        <section className="py-16 sm:py-20 bg-gradient-to-b from-[var(--qing)] to-[var(--qing-light)] text-white bg-pattern-dark">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <FadeIn>
-              <TaijiSymbol size={60} className="text-[var(--huang)] mx-auto mb-6" />
+                <TaijiImage size={80} className="text-[var(--huang)] mx-auto mb-6" />
               <blockquote className="text-2xl sm:text-3xl font-bold mb-4 font-serif">
                 「最灵性的符，是你每一个正向的念头和坚定的行动」
               </blockquote>
@@ -134,7 +134,7 @@ export default function CulturePage() {
         </section>
       </main>
 
-      <footer className="bg-[var(--hei)] text-white py-8">
+      <footer className="bg-[var(--hei)] text-white py-8 bg-pattern-dark">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-white/60">© 2026 武当后山符合堂 · 符道文化传承中心</p>
         </div>

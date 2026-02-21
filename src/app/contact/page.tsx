@@ -2,7 +2,7 @@
 
 import Navigation from "../components/Navigation";
 import { FadeIn } from "../components/Animations";
-import { TaijiSymbol, Divider } from "../components/TaoistSymbols";
+import { TaijiImage, Divider } from "../components/TaoistSymbols";
 import ContactForm from "../components/ContactForm";
 import { motion } from "framer-motion";
 
@@ -46,12 +46,12 @@ export default function ContactPage() {
       <Navigation />
 
       <main className="pt-20">
-        <section className="py-16 sm:py-24 bg-gradient-to-b from-[var(--hei)] to-[var(--hei)] text-white relative overflow-hidden">
+        <section className="py-16 sm:py-24 bg-gradient-to-b from-[var(--hei)] to-[var(--hei)] text-white relative overflow-hidden bg-pattern-dark">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <FadeIn>
-              <div className="flex justify-center mb-6">
-                <TaijiSymbol size={80} className="text-[var(--huang)]" />
-              </div>
+               <div className="flex justify-center mb-6 mt-12">
+                   <TaijiImage size={120} className="text-[var(--huang)]" />
+               </div>
               <h1 className="text-4xl sm:text-6xl font-bold mb-6 font-serif">联系我们</h1>
               <Divider className="my-6" />
               <p className="text-xl text-[var(--huang)]">传承符道文化 · 开启幸福人生</p>
@@ -59,12 +59,12 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 bg-white">
+        <section className="py-16 sm:py-20 bg-white bg-pattern">
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid md:grid-cols-3 gap-6 -mt-20 relative z-10">
               {contactInfo.map((item, index) => (
                 <FadeIn key={index} delay={index * 0.1}>
-                  <div className="bg-white rounded-xl shadow-lg p-6 sm:p-8 text-center border border-gray-100">
+                  <div className="bg-white bg-pattern rounded-xl shadow-lg p-6 sm:p-8 text-center border border-gray-100">
                     <div className={`w-16 h-16 ${item.color} rounded-full flex items-center justify-center mx-auto mb-4 text-white text-3xl`}>
                       {item.icon}
                     </div>
@@ -99,7 +99,7 @@ export default function ContactPage() {
                       <motion.div
                         key={index}
                         whileHover={{ y: -2 }}
-                        className="bg-white rounded-xl p-6 shadow-taoist hover-lift"
+                        className="bg-white bg-pattern rounded-xl p-6 shadow-taoist hover-lift"
                       >
                         <h3 className="text-lg font-bold text-[var(--hei)] mb-2">{item.title}</h3>
                         <p className="text-[var(--hei)]/60 text-sm mb-4">{item.desc}</p>
@@ -117,7 +117,7 @@ export default function ContactPage() {
                     ))}
                   </div>
 
-                  <div className="mt-8 bg-white rounded-xl p-6 shadow-taoist">
+                  <div className="mt-8 bg-white bg-pattern rounded-xl p-6 shadow-taoist">
                     <h3 className="font-bold text-[var(--hei)] mb-4">工作时间</h3>
                     <div className="space-y-2 text-sm">
                       <div className="flex justify-between">
@@ -140,7 +140,7 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 bg-white">
+        <section className="py-16 sm:py-20 bg-white bg-pattern">
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
               <div className="text-center mb-12">
@@ -166,7 +166,7 @@ export default function ContactPage() {
         </section>
       </main>
 
-      <footer className="bg-[var(--hei)] text-white py-8">
+      <footer className="bg-[var(--hei)] text-white py-8 bg-pattern-dark">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-white/60">© 2026 武当后山符合堂 · 符道文化传承中心</p>
         </div>
