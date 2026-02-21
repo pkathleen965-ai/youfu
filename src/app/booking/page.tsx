@@ -5,8 +5,12 @@ import Footer from "../components/Footer";
 import BookingSystem from "../components/BookingSystem";
 import { FadeIn } from "../components/Animations";
 import ThreeDTaiji from "../components/ThreeDTaiji";
+import { useI18n } from "../i18n";
 
 export default function BookingPage() {
+  const { t } = useI18n();
+  const { booking: tb } = t;
+
   return (
     <div className="min-h-screen bg-[var(--bai)]">
       <Navigation />
@@ -19,10 +23,10 @@ export default function BookingPage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <FadeIn>
               <h1 className="text-4xl sm:text-6xl font-bold mb-6 font-serif">
-                在线预约
+                {tb.title}
               </h1>
               <p className="text-xl text-white/80">
-                选择服务类型，预约专属时间
+                {tb.subtitle}
               </p>
             </FadeIn>
           </div>

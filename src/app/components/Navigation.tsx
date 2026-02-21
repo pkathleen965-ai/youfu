@@ -4,20 +4,22 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TaijiImage } from "./TaoistSymbols";
-
-const navItems = [
-  { href: "/", label: "首页" },
-  { href: "/culture", label: "符道文化" },
-  { href: "/fuzhou", label: "祝由符箓" },
-  { href: "/fashi", label: "道家法事" },
-  { href: "/zhongshengji", label: "种生基" },
-  { href: "/cases", label: "真实案例" },
-  { href: "/contact", label: "联系我们" },
-];
+import { useI18n, LanguageSwitcher } from "../i18n";
 
 export default function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { t } = useI18n();
+
+  const navItems = [
+    { href: "/", label: t.nav.home },
+    { href: "/culture", label: t.nav.culture },
+    { href: "/fuzhou", label: t.nav.fuzhou },
+    { href: "/fashi", label: t.nav.fashi },
+    { href: "/zhongshengji", label: t.nav.zhongshengji },
+    { href: "/cases", label: t.nav.cases },
+    { href: "/contact", label: t.nav.contact },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -44,11 +46,11 @@ export default function Navigation() {
                <span className="text-lg sm:text-xl font-bold text-[var(--hei)] group-hover:text-[var(--qing)] transition-colors font-serif">
                  武当后山符合堂
                </span>
-               <span className="text-xs text-[var(--huang)] font-medium tracking-wider">符道文化传承</span>
+               <span className="text-xs text-[var(--hei)]/70 font-medium tracking-wider">符道文化传承</span>
             </div>
           </Link>
 
-          <div className="hidden lg:flex items-center gap-8">
+          <div className="hidden lg:flex items-center gap-6">
             {navItems.map((item) => (
               <Link
                 key={item.href}
@@ -58,6 +60,7 @@ export default function Navigation() {
                 {item.label}
               </Link>
             ))}
+            <LanguageSwitcher />
           </div>
 
           <button
@@ -93,6 +96,9 @@ export default function Navigation() {
                     {item.label}
                   </Link>
                 ))}
+                <div className="px-4 pt-2">
+                  <LanguageSwitcher />
+                </div>
               </div>
             </motion.div>
           )}

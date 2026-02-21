@@ -5,8 +5,12 @@ import Footer from "../components/Footer";
 import FortuneTest from "../components/FortuneTest";
 import { FadeIn } from "../components/Animations";
 import ThreeDTaiji from "../components/ThreeDTaiji";
+import { useI18n } from "../i18n";
 
 export default function FortunePage() {
+  const { t } = useI18n();
+  const { fortune: tf } = t;
+
   return (
     <div className="min-h-screen bg-[var(--bai)]">
       <Navigation />
@@ -19,13 +23,13 @@ export default function FortunePage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <FadeIn>
               <h1 className="text-4xl sm:text-6xl font-bold mb-6 font-serif">
-                五行运势测试
+                {tf.title}
               </h1>
               <p className="text-xl text-white/80 mb-4">
-                探索您的五行属性，了解专属运势建议
+                {tf.subtitle}
               </p>
               <p className="text-white/60">
-                5道题 · 免费测试 · 立即出结果
+                {tf.subtitle2}
               </p>
             </FadeIn>
           </div>

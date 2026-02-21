@@ -1,25 +1,23 @@
 import Link from "next/link";
 import { TaijiImage } from "./TaoistSymbols";
-
-const footerLinks = {
-  services: [
-    { href: "/fuzhou", label: "祝由符箓" },
-    { href: "/fashi", label: "道家法事" },
-    { href: "/zhongshengji", label: "种生基" },
-  ],
-  about: [
-    { href: "/culture", label: "符道文化" },
-    { href: "/cases", label: "真实案例" },
-    { href: "/contact", label: "联系我们" },
-  ],
-};
-
-const contactInfo = [
-  { label: "微信", value: "wudangfuhetang" },
-  { label: "邮箱", value: "info@wudangfuhetang.com" },
-];
+import { useI18n } from "../i18n";
 
 export default function Footer() {
+  const { t } = useI18n();
+
+  const footerLinks = {
+    services: [
+      { href: "/fuzhou", label: t.nav.fuzhou },
+      { href: "/fashi", label: t.nav.fashi },
+      { href: "/zhongshengji", label: t.nav.zhongshengji },
+    ],
+    about: [
+      { href: "/culture", label: t.nav.culture },
+      { href: "/cases", label: t.nav.cases },
+      { href: "/contact", label: t.nav.contact },
+    ],
+  };
+
   return (
     <footer
       className="py-12 border-t bg-pattern-dark"
@@ -31,19 +29,17 @@ export default function Footer() {
             <div className="flex items-center gap-3 mb-4">
               <TaijiImage size={48} className="text-[var(--dao-huang)]" />
               <span className="text-lg font-bold font-serif text-gradient-huang">
-                武当后山符合堂
+                {t.footer.brand}
               </span>
             </div>
             <p className="text-white/60 text-sm">
-              传承道家符箓文化
-              <br />
-              弘扬祝由智慧
+              {t.footer.brandDesc}
             </p>
           </div>
 
           <div>
             <h4 className="font-bold mb-4" style={{ color: "var(--dao-huang)" }}>
-              服务项目
+              {t.footer.services}
             </h4>
             <ul className="space-y-2 text-sm text-white/60">
               {footerLinks.services.map((link) => (
@@ -58,7 +54,7 @@ export default function Footer() {
 
           <div>
             <h4 className="font-bold mb-4" style={{ color: "var(--dao-huang)" }}>
-              了解更多
+              {t.footer.about}
             </h4>
             <ul className="space-y-2 text-sm text-white/60">
               {footerLinks.about.map((link) => (
@@ -73,20 +69,17 @@ export default function Footer() {
 
           <div>
             <h4 className="font-bold mb-4" style={{ color: "var(--dao-huang)" }}>
-              联系方式
+              {t.footer.contact}
             </h4>
             <ul className="space-y-2 text-sm text-white/60">
-              {contactInfo.map((info) => (
-                <li key={info.label}>
-                  {info.label}：{info.value}
-                </li>
-              ))}
+              <li>{t.footer.weChat}：wudangfuhetang</li>
+              <li>{t.footer.email}：info@wudangfuhetang.com</li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-white/10 pt-8 text-center text-sm text-white/40">
-          <p>© 2026 武当后山符合堂 · 符道文化传承中心</p>
+          <p>© 2026 {t.footer.copyright}</p>
         </div>
       </div>
     </footer>

@@ -5,23 +5,11 @@ import Footer from "../components/Footer";
 import { FadeIn, StaggerContainer, StaggerItem } from "../components/Animations";
 import { TaijiImage, BaguaSymbol, Divider, WuXingSymbol } from "../components/TaoistSymbols";
 import { motion } from "framer-motion";
-
-const cultureTopics = [
-  { title: "符的起源", content: "符，源于道家祝由术，是中华传统文化的重要组成部分。早在先秦时期，先民们就开始使用符箓来祈福禳灾、治病救人。", icon: "📜" },
-  { title: "祝由术的智慧", content: "《黄帝内经》云：「古之治病，唯其移精变气，可祝由而已。」祝由术的本质，是通过意念的聚焦，疏通全身淤堵。", icon: "☯️" },
-  { title: "符与福的联系", content: "符与福，音近而义通。符是福的种子，福是符的显化。每个人都可以通过修炼符力，显化属于自己的幸福。", icon: "🍀" },
-  { title: "现代应用", content: "在现代社会，符道文化不仅仅是一种传统，更是一种生活智慧，帮助我们在日常生活中获得内心的平静与力量。", icon: "💫" },
-];
-
-const historyTimeline = [
-  { era: "先秦时期", event: "符箓起源", desc: "先民开始使用符号进行祈福禳灾" },
-  { era: "汉代", event: "道教形成", desc: "张道陵创立五斗米道，符箓系统化" },
-  { era: "唐宋时期", event: "鼎盛发展", desc: "符箓文化达到顶峰，广泛应用于民间" },
-  { era: "明清时期", event: "传承延续", desc: "各派道教科仪完善，符法精微" },
-  { era: "现代", event: "文化复兴", desc: "传统文化复兴，符道文化焕发新生" },
-];
+import { useI18n } from "../i18n";
 
 export default function CulturePage() {
+  const { t } = useI18n();
+  const { culture: tc, footer: tf } = t;
   return (
     <div className="min-h-screen bg-[var(--bai)]">
       <Navigation />
@@ -36,9 +24,9 @@ export default function CulturePage() {
                <div className="flex justify-center mb-6 mt-12">
                    <TaijiImage size={120} className="text-[var(--huang)]" />
                </div>
-              <h1 className="text-4xl sm:text-6xl font-bold mb-6 font-serif">符道文化</h1>
+              <h1 className="text-4xl sm:text-6xl font-bold mb-6 font-serif">{tc.title}</h1>
               <Divider className="my-6" />
-              <p className="text-xl text-[var(--huang)]">传承千年智慧，探索符与福的奥秘</p>
+              <p className="text-xl text-[var(--huang)]">{tc.subtitle}</p>
             </FadeIn>
           </div>
         </section>
@@ -47,7 +35,7 @@ export default function CulturePage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-[var(--hei)] mb-4 font-serif">什么是符道文化</h2>
+                <h2 className="text-3xl font-bold text-[var(--hei)] mb-4 font-serif">{tc.whatIs}</h2>
                 <Divider className="my-6" />
               </div>
             </FadeIn>
@@ -55,13 +43,13 @@ export default function CulturePage() {
             <FadeIn>
               <div className="prose prose-lg max-w-none text-[var(--hei)]/80 leading-relaxed">
                 <p className="mb-6">
-                  符道文化，是中华传统文化中的瑰宝。它源于道家祝由术，历经数千年发展，蕴含着深邃的哲学思想和实践智慧。在符道文化中，「符」不仅仅是写在纸上的符号，更是一种能量的载体，一种意念的聚焦，一种与天地沟通的媒介。
+                  {tc.intro}
                 </p>
                 <p className="mb-6">
-                  道教认为，宇宙万物皆由气构成，符箓通过特定的笔画、结构和仪式，可以调动天地灵气，调整人体能量场，达到祈福消灾、转运改命的效果。
+                  {tc.intro2}
                 </p>
                 <p>
-                  「武当后山符合堂」致力于将这份古老智慧进行现代诠释，让更多人了解符道文化，感受符与福的内在联系。
+                  {tc.intro3}
                 </p>
               </div>
             </FadeIn>
@@ -72,13 +60,13 @@ export default function CulturePage() {
           <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-[var(--hei)] mb-4 font-serif">符道文化的核心</h2>
+                <h2 className="text-3xl font-bold text-[var(--hei)] mb-4 font-serif">{tc.core}</h2>
                 <Divider className="my-6" />
               </div>
             </FadeIn>
 
             <StaggerContainer className="grid md:grid-cols-2 gap-8">
-              {cultureTopics.map((topic, index) => (
+              {tc.topics.map((topic: { title: string; content: string; icon: string }, index: number) => (
                 <StaggerItem key={index}>
                    <motion.div whileHover={{ y: -5 }} className="bg-white bg-pattern p-8 rounded-xl shadow-taoist hover-lift">
                     <div className="text-4xl mb-4">{topic.icon}</div>
@@ -95,14 +83,14 @@ export default function CulturePage() {
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn>
               <div className="text-center mb-12">
-                <h2 className="text-3xl font-bold text-[var(--hei)] mb-4 font-serif">发展历程</h2>
+                <h2 className="text-3xl font-bold text-[var(--hei)] mb-4 font-serif">{tc.history}</h2>
                 <Divider className="my-6" />
               </div>
             </FadeIn>
 
             <div className="relative">
               <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[var(--qing)] to-[var(--huang)] md:-translate-x-1/2" />
-              {historyTimeline.map((item, index) => (
+              {tc.timeline.map((item: { era: string; event: string; desc: string }, index: number) => (
                 <FadeIn key={index} delay={index * 0.1}>
                   <div className={`relative flex items-center mb-8 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}>
                     <div className="absolute left-4 md:left-1/2 w-4 h-4 bg-[var(--qing)] rounded-full border-4 border-[var(--huang)]/30 md:-translate-x-1/2 z-10" />
@@ -125,10 +113,10 @@ export default function CulturePage() {
             <FadeIn>
                 <TaijiImage size={80} className="text-[var(--huang)] mx-auto mb-6" />
               <blockquote className="text-2xl sm:text-3xl font-bold mb-4 font-serif">
-                「最灵性的符，是你每一个正向的念头和坚定的行动」
+                {tc.quote}
               </blockquote>
               <p className="text-white/80">
-                当我们将注意力从「求福」转向「修符」，福气自然显现
+                {tc.quoteDesc}
               </p>
             </FadeIn>
           </div>
