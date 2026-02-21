@@ -79,12 +79,12 @@ export function BaguaSymbol({ className = "", size = 200 }: { className?: string
   );
 }
 
-export function Divider({ className = "" }: { className?: string }) {
+export function Divider({ className = "", style = {} }: { className?: string; style?: React.CSSProperties }) {
   return (
-    <div className={`flex items-center justify-center gap-4 ${className}`} role="separator">
-      <div className="h-px w-16 bg-gradient-to-r from-transparent via-[var(--huang)] to-transparent" />
+    <div className={`flex items-center justify-center gap-4 ${className}`} style={style} role="separator">
+      <div className="h-px w-16 bg-gradient-to-r from-transparent via-current to-transparent" />
       <TaijiImage size={30} />
-      <div className="h-px w-16 bg-gradient-to-r from-transparent via-[var(--huang)] to-transparent" />
+      <div className="h-px w-16 bg-gradient-to-r from-transparent via-current to-transparent" />
     </div>
   );
 }
