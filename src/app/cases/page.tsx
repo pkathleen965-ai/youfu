@@ -33,12 +33,12 @@ export default function CasesPage() {
       <Navigation />
 
       <main className="pt-20">
-        <section className="py-16 sm:py-24 bg-gradient-to-b from-[var(--hei)] to-[var(--hei)] text-white relative overflow-hidden bg-pattern-dark">
+        <section className="py-16 sm:py-24 bg-pattern text-white relative overflow-hidden" style={{ background: 'linear-gradient(180deg, var(--shui-dark), var(--shui))' }}>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <FadeIn>
-              <h1 className="text-4xl sm:text-6xl font-bold mb-6 font-serif">{tc.title}</h1>
-              <Divider className="my-6" />
-              <p className="text-xl text-[var(--huang)]">{tc.subtitle}</p>
+              <h1 className="text-4xl sm:text-6xl font-bold mb-6 font-serif text-white">{tc.title}</h1>
+              <Divider className="my-6" style={{ backgroundColor: 'var(--shui-light)' }} />
+              <p className="text-xl text-white/80">{tc.subtitle}</p>
             </FadeIn>
           </div>
         </section>
@@ -107,12 +107,12 @@ export default function CasesPage() {
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 bg-gradient-to-b from-[var(--qing)] to-[var(--qing-light)] text-white bg-pattern-dark">
+        <section className="py-16 sm:py-20 bg-pattern text-white" style={{ background: 'linear-gradient(180deg, var(--mu-dark), var(--mu))' }}>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <FadeIn>
-              <h2 className="text-3xl font-bold mb-6 font-serif">{tc.title}</h2>
+              <h2 className="text-3xl font-bold mb-6 font-serif text-white">{tc.title}</h2>
               <p className="mb-8 text-white/80">{tc.subtitle}</p>
-              <Link href="/contact" className="inline-block px-10 py-4 bg-white text-[var(--qing)] rounded-full font-bold text-lg hover:bg-[var(--bai)] transition-all">
+              <Link href="/contact" className="inline-block px-10 py-4 bg-white text-[var(--mu-dark)] rounded-full font-bold text-lg hover:bg-[var(--bai)] transition-all">
                 {tc.subtitle}
               </Link>
             </FadeIn>

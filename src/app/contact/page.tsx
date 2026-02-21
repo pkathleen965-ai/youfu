@@ -44,15 +44,15 @@ export default function ContactPage() {
       <Navigation />
 
       <main className="pt-20">
-        <section className="py-16 sm:py-24 bg-gradient-to-b from-[var(--hei)] to-[var(--hei)] text-white relative overflow-hidden bg-pattern-dark">
+        <section className="py-16 sm:py-24 bg-pattern text-white relative overflow-hidden" style={{ background: 'linear-gradient(180deg, var(--shui-dark), var(--shui))' }}>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <FadeIn>
                <div className="flex justify-center mb-6 mt-12">
-                   <TaijiImage size={120} className="text-[var(--huang)]" />
+                   <TaijiImage size={120} className="text-white" />
                </div>
-              <h1 className="text-4xl sm:text-6xl font-bold mb-6 font-serif">{tc.title}</h1>
-              <Divider className="my-6" />
-              <p className="text-xl text-[var(--huang)]">{tc.subtitle}</p>
+              <h1 className="text-4xl sm:text-6xl font-bold mb-6 font-serif text-white">{tc.title}</h1>
+              <Divider className="my-6" style={{ backgroundColor: 'var(--shui-light)' }} />
+              <p className="text-xl text-white/80">{tc.subtitle}</p>
             </FadeIn>
           </div>
         </section>

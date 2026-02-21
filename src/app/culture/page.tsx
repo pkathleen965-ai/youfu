@@ -15,18 +15,18 @@ export default function CulturePage() {
       <Navigation />
 
       <main className="pt-20">
-        <section className="py-16 sm:py-24 bg-gradient-to-b from-[var(--hei)] via-[var(--hei)] to-[var(--qing)] text-white relative overflow-hidden bg-pattern-dark">
+        <section className="py-16 sm:py-24 bg-pattern text-white relative overflow-hidden" style={{ background: 'linear-gradient(180deg, var(--jin-dark), var(--jin))' }}>
           <div className="absolute inset-0 opacity-10">
             <BaguaSymbol size={400} className="absolute -top-20 -right-20 text-[var(--huang)]" />
           </div>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <FadeIn>
                <div className="flex justify-center mb-6 mt-12">
-                   <TaijiImage size={120} className="text-[var(--huang)]" />
+                   <TaijiImage size={120} className="text-white" />
                </div>
-              <h1 className="text-4xl sm:text-6xl font-bold mb-6 font-serif">{tc.title}</h1>
-              <Divider className="my-6" />
-              <p className="text-xl text-[var(--huang)]">{tc.subtitle}</p>
+              <h1 className="text-4xl sm:text-6xl font-bold mb-6 font-serif text-white">{tc.title}</h1>
+              <Divider className="my-6" style={{ backgroundColor: 'var(--jin-light)' }} />
+              <p className="text-xl text-white/80">{tc.subtitle}</p>
             </FadeIn>
           </div>
         </section>
@@ -108,11 +108,11 @@ export default function CulturePage() {
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 bg-gradient-to-b from-[var(--qing)] to-[var(--qing-light)] text-white bg-pattern-dark">
+        <section className="py-16 sm:py-20 bg-pattern text-white" style={{ background: 'linear-gradient(180deg, var(--jin), var(--jin-light))' }}>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <FadeIn>
-                <TaijiImage size={80} className="text-[var(--huang)] mx-auto mb-6" />
-              <blockquote className="text-2xl sm:text-3xl font-bold mb-4 font-serif">
+                <TaijiImage size={80} className="text-white mx-auto mb-6" />
+              <blockquote className="text-2xl sm:text-3xl font-bold mb-4 font-serif text-white">
                 {tc.quote}
               </blockquote>
               <p className="text-white/80">

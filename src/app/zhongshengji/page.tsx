@@ -35,19 +35,15 @@ export default function ZhongShengJiPage() {
       <Navigation />
 
       <main className="pt-20">
-        <section className="py-16 sm:py-24 bg-gradient-to-b from-[var(--hei)] via-[var(--hei)] to-[var(--hei)]/95 text-white relative overflow-hidden bg-pattern-dark">
-          <div className="absolute inset-0 opacity-5">
-            <BaguaSymbol size={600} className="absolute -top-40 -right-40 text-[var(--huang)]" />
-              <TaijiImage size={400} className="absolute -bottom-30 -left-30" />
-          </div>
+        <section className="py-16 sm:py-24 bg-pattern text-white relative overflow-hidden" style={{ background: 'linear-gradient(180deg, var(--shui-dark), var(--shui))' }}>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <FadeIn>
               <div className="flex justify-center mb-6">
-                <div className="w-20 h-20 bg-gradient-to-br from-[var(--huang)] to-[var(--huang-light)] rounded-full flex items-center justify-center shadow-lg">
+                <div className="w-20 h-20 bg-gradient-to-br from-[var(--tu)] to-[var(--tu-light)] rounded-full flex items-center justify-center shadow-lg">
                   <span className="text-4xl">🏔️</span>
                 </div>
               </div>
-              <h1 className="text-4xl sm:text-6xl font-bold mb-6 font-serif">{tz.title}</h1>
+              <h1 className="text-4xl sm:text-6xl font-bold mb-6 font-serif text-white">{tz.title}</h1>
               <Divider className="my-6" />
               <p className="text-xl text-[var(--huang)] max-w-3xl mx-auto">
                 {tz.subtitle}
@@ -183,16 +179,16 @@ export default function ZhongShengJiPage() {
           </div>
         </section>
 
-        <section className="py-16 sm:py-20 bg-gradient-to-b from-[var(--huang)] to-[var(--huang-light)] text-[var(--hei)] bg-pattern-dark">
+        <section className="py-16 sm:py-20 bg-pattern" style={{ background: 'linear-gradient(180deg, var(--tu-dark), var(--tu))' }}>
           <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
             <FadeIn>
-              <h2 className="text-3xl font-bold mb-4 font-serif">{tz.cta}</h2>
-              <p className="mb-8 text-[var(--hei)]/70">{tz.ctaDesc}</p>
+              <h2 className="text-3xl font-bold mb-4 font-serif text-white">{tz.cta}</h2>
+              <p className="mb-8 text-white/80">{tz.ctaDesc}</p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact" className="px-10 py-4 bg-[var(--hei)] text-white rounded-full font-bold text-lg hover:bg-[var(--hei)]/90 transition-all">
+                <Link href="/contact" className="px-10 py-4 bg-white text-[var(--tu-dark)] rounded-full font-bold text-lg hover:bg-white/90 transition-all">
                   {tz.cta}
                 </Link>
-                <Link href="/contact" className="px-10 py-4 border-2 border-[var(--hei)] text-[var(--hei)] rounded-full font-bold text-lg hover:bg-[var(--hei)]/10 transition-all">
+                <Link href="/contact" className="px-10 py-4 border-2 border-white text-white rounded-full font-bold text-lg hover:bg-white/10 transition-all">
                   {tz.learnMore}
                 </Link>
               </div>

@@ -16,7 +16,7 @@ export default function FortunePage() {
       <Navigation />
 
       <main className="pt-20">
-        <section className="py-16 sm:py-24 bg-gradient-to-b from-[var(--qing)] to-[var(--qing-light)] text-white relative overflow-hidden">
+        <section className="py-16 sm:py-24 bg-pattern text-white relative overflow-hidden" style={{ background: 'linear-gradient(180deg, var(--mu-dark), var(--mu))' }}>
           <div className="absolute inset-0 opacity-10">
             <ThreeDTaiji size={400} />
           </div>

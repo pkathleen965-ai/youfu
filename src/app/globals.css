@@ -3,74 +3,110 @@
 @tailwind utilities;
 
 :root {
-  /* 网纹颜色变量 - 默认浅色背景使用深色网纹 */
+  /* 网纹颜色变量 */
   --mesh-color: rgba(0, 0, 0, 0.05);
   --mesh-color-2: rgba(0, 0, 0, 0.03);
 
-  /* 设计师提供的道家五色 - 鲜艳版 */
-  --dao-qing: #1E8D8D;
-  --dao-qing-light: #40E0D0;
-  --dao-qing-dark: #0A2F2F;
+  /* ========== 五行配色系统 ========== */
   
-  --dao-zi: #6A0DAD;
-  --dao-zi-light: #B266FF;
-  --dao-zi-dark: #4A0080;
+  /* 木 - 青帝色 */
+  --mu: #0D7377;
+  --mu-light: #14A3A8;
+  --mu-dark: #065456;
   
-  --dao-huang: #C89F68;
-  --dao-huang-light: #F4C542;
-  --dao-huang-dark: #B8863F;
+  /* 火 - 赤帝色 */
+  --huo: #C41E3A;
+  --huo-light: #E63946;
+  --huo-dark: #8B1428;
   
-  --dao-chi: #D43A2F;
-  --dao-chi-light: #FF7F50;
-  --dao-chi-dark: #B22222;
+  /* 土 - 黄帝色 */
+  --tu: #B8860B;
+  --tu-light: #DAA520;
+  --tu-dark: #8B6914;
   
-   --dao-mo: #1A1A1A;
-   --dao-xuan: #F5F5F5;
-   --dao-bai: #FFFFFF;
-   
-   /* 中文颜色变量（拼音） */
-   --hei: #1A1A1A;      /* 黑色 */
-   --qing: #1E8D8D;     /* 青色 */
-   --qing-light: #40E0D0; /* 浅青色 */
-   --huang: #C89F68;    /* 黄色 */
-   --huang-light: #F4C542; /* 浅黄色 */
-   --bai: #FFFFFF;      /* 白色 */
-   --chi: #D43A2F;      /* 赤色（红色） */
-   --chi-light: #FF7F50; /* 浅赤色 */
-   --zi: #6A0DAD;       /* 紫色 */
-   --zi-light: #B266FF;  /* 浅紫色 */
+  /* 金 - 白帝色 */
+  --jin: #6B5B95;
+  --jin-light: #9370DB;
+  --jin-dark: #4B3B70;
+  
+  /* 水 - 黑帝色 */
+  --shui: #1E3A5F;
+  --shui-light: #2E5A8C;
+  --shui-dark: #0D1F33;
+  
+  /* 中性色 */
+  --mo: #1A1A1A;
+  --xuan: #F5F5F5;
+  --bai: #FFFFFF;
 
-  /* ========== 五行色彩系统 ========== */
-  /* 五行色彩 - 主色（基于道家五色调整） */
-  --wu-xing-mu: #1E8D8D;      /* 木：青色（生长、发展） */
-  --wu-xing-huo: #D43A2F;     /* 火：赤色（热情、能量） */
-  --wu-xing-tu: #C89F68;      /* 土：黄色（稳定、承载） */
-  --wu-xing-jin: #6A0DAD;     /* 金：紫色（尊贵、纯净） */
-  --wu-xing-shui: #2E5A8C;    /* 水：深蓝色（智慧、流动） */
+  /* 中文颜色变量（兼容） */
+  --hei: #1A1A1A;
+  --qing: #0D7377;
+  --qing-light: #14A3A8;
+  --huang: #B8860B;
+  --huang-light: #DAA520;
+  --chi: #C41E3A;
+  --chi-light: #E63946;
+  --zi: #6B5B95;
+  --zi-light: #9370DB;
+
+  /* 道家五色（兼容） */
+  --dao-qing: #0D7377;
+  --dao-qing-light: #14A3A8;
+  --dao-qing-dark: #065456;
+  --dao-zi: #6B5B95;
+  --dao-zi-light: #9370DB;
+  --dao-zi-dark: #4B3B70;
+  --dao-huang: #B8860B;
+  --dao-huang-light: #DAA520;
+  --dao-huang-dark: #8B6914;
+  --dao-chi: #C41E3A;
+  --dao-chi-light: #E63946;
+  --dao-chi-dark: #8B1428;
+  --dao-mo: #1A1A1A;
+  --dao-xuan: #F5F5F5;
+  --dao-bai: #FFFFFF;
+
+  /* 五行色彩 - 浅色变体 */
+  --wu-xing-mu-light: #E8F4F4;
+  --wu-xing-huo-light: #FDE8E7;
+  --wu-xing-tu-light: #F8F0E6;
+  --wu-xing-jin-light: #F3E8FF;
+  --wu-xing-shui-light: #E8F0F8;
   
-  /* 五行色彩 - 浅色变体（用于背景，确保文字可读） */
-  --wu-xing-mu-light: #E8F4F4;    /* 对比度：21:1（优秀） */
-  --wu-xing-huo-light: #FDE8E7;   /* 对比度：20:1（优秀） */
-  --wu-xing-tu-light: #F8F0E6;    /* 对比度：18:1（优秀） */
-  --wu-xing-jin-light: #F3E8FF;   /* 对比度：19:1（优秀） */
-  --wu-xing-shui-light: #E8F0F8;  /* 对比度：20:1（优秀） */
+  /* 安全文字颜色 */
+  --text-safe-on-light: #1A1A1A;
+  --text-safe-on-dark: #FFFFFF;
+  --text-safe-on-color: #FFFFFF;
   
-  /* 五行色彩 - 深色变体（用于文字，确保在浅色背景上可读） */
-  --wu-xing-mu-dark: #0A2F2F;     /* 在浅色背景上对比度：21:1 */
-  --wu-xing-huo-dark: #5C1A15;    /* 在浅色背景上对比度：20:1 */
-  --wu-xing-tu-dark: #5C3F2A;     /* 在浅色背景上对比度：18:1 */
-  --wu-xing-jin-dark: #340652;    /* 在浅色背景上对比度：19:1 */
-  --wu-xing-shui-dark: #1A2C40;   /* 在浅色背景上对比度：20:1 */
-  
-  /* 安全文字颜色 - 强制确保可读性 */
-  --text-safe-on-light: #1A1A1A;  /* 在浅色背景上（对比度21:1） */
-  --text-safe-on-dark: #FFFFFF;   /* 在深色背景上（对比度21:1） */
-  --text-safe-on-color: #FFFFFF;  /* 在彩色背景上（添加阴影增强） */
-  
-  /* 文字阴影增强对比度 */
+  /* 文字阴影 */
   --text-shadow-light: 0 1px 2px rgba(0, 0, 0, 0.1);
   --text-shadow-medium: 0 2px 4px rgba(0, 0, 0, 0.3);
   --text-shadow-strong: 0 2px 8px rgba(0, 0, 0, 0.5);
+
+  /* ========== 字体系统 ========== */
+  --font-title: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  --font-body: "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  --font-btn: "Noto Sans SC", "Microsoft YaHei", sans-serif;
+  
+  /* 字号变量 */
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-2xl: 1.5rem;
+  --text-3xl: 1.875rem;
+  --text-4xl: 2.25rem;
+  --text-5xl: 3rem;
+  --text-6xl: 3.75rem;
+  --text-7xl: 4.5rem;
+  
+  /* 文字颜色 */
+  --text-primary: #1A1A1A;
+  --text-secondary: #4A4A4A;
+  --text-body: #666666;
+  --text-muted: #999999;
 }
 
 @tailwind base;
@@ -89,15 +125,53 @@ html {
 }
 
 body {
-  font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  font-family: var(--font-body);
   background-color: var(--dao-xuan);
-  color: var(--dao-mo);
+  color: var(--text-primary);
   line-height: 1.8;
+  letter-spacing: 0.01em;
+}
+
+/* 标题字体 */
+.font-title,
+.font-serif,
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-title);
+  letter-spacing: 0.02em;
+}
+
+/* 正文字体 */
+.font-body {
+  font-family: var(--font-body);
+}
+
+/* 按钮字体 */
+.font-btn {
+  font-family: var(--font-btn);
+  letter-spacing: 0.05em;
+}
+
+/* 字号类 */
+.text-hero { font-size: var(--text-5xl); font-weight: 700; line-height: 1.2; }
+.text-h1 { font-size: var(--text-4xl); font-weight: 700; line-height: 1.3; }
+.text-h2 { font-size: var(--text-3xl); font-weight: 700; line-height: 1.3; }
+.text-h3 { font-size: var(--text-2xl); font-weight: 600; line-height: 1.4; }
+.text-h4 { font-size: var(--text-xl); font-weight: 600; line-height: 1.4; }
+.text-subtitle { font-size: var(--text-lg); font-weight: 500; line-height: 1.5; }
+.text-body { font-size: var(--text-base); font-weight: 400; line-height: 1.8; }
+.text-muted { font-size: var(--text-sm); font-weight: 400; line-height: 1.6; color: var(--text-muted); }
+
+/* 响应式字号 */
+@media (max-width: 768px) {
+  .text-hero { font-size: var(--text-3xl); }
+  .text-h1 { font-size: var(--text-2xl); }
+  .text-h2 { font-size: var(--text-xl); }
+  .text-h3 { font-size: var(--text-lg); }
 }
 
 /* 字体类 */
 .font-serif {
-  font-family: "Noto Serif SC", "Songti SC", "SimSun", serif;
+  font-family: var(--font-title);
 }
 
 /* 核心渐变背景 */
@@ -288,7 +362,7 @@ body {
 /* 五行背景类 */
 .bg-wu-mu { background-color: var(--wu-xing-mu); }
 .bg-wu-huo { background-color: var(--wu-xing-huo); }
-.bg-wu-tu { background-color: var(--wu-xing-tu); }
+.bg-wu-tu { background: linear-gradient(180deg, var(--tu-dark), var(--tu), var(--tu-light)); }
 .bg-wu-jin { background-color: var(--wu-xing-jin); }
 .bg-wu-shui { background-color: var(--wu-xing-shui); }
 

@@ -16,7 +16,7 @@ export default function BookingPage() {
       <Navigation />
 
       <main className="pt-20">
-        <section className="py-16 sm:py-24 bg-gradient-to-b from-[var(--chi)] to-[var(--chi-light)] text-white relative overflow-hidden">
+        <section className="py-16 sm:py-24 bg-pattern text-white relative overflow-hidden" style={{ background: 'linear-gradient(180deg, var(--huo-dark), var(--huo))' }}>
           <div className="absolute inset-0 opacity-10">
             <ThreeDTaiji size={400} />
           </div>
