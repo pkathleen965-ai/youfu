@@ -451,8 +451,8 @@ body {
 .bg-pattern-dark {
   position: relative;
   overflow: hidden;
-  --mesh-color: rgba(255, 255, 255, 0.05);
-  --mesh-color-2: rgba(255, 255, 255, 0.03);
+  --mesh-color: rgba(255, 255, 255, 0.12);
+  --mesh-color-2: rgba(255, 255, 255, 0.08);
 }
 
 .bg-pattern-dark::before {

@@ -28,7 +28,7 @@ export default function Home() {
       <AIChat />
 
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-start pt-12 justify-center overflow-hidden bg-wu-tu bg-pattern-dark">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-wu-tu bg-pattern-dark">
         <div className="absolute inset-0 opacity-10">
           <BaguaSymbol size={600} className="absolute -top-20 -right-20 text-on-wu-tu" />
         </div>
